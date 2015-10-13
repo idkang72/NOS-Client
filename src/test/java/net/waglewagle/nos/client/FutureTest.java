@@ -12,11 +12,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class FutureTest {
-	private final static ExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-
 	private final static String openApiUrl = "http://openapi.ndsl.kr/itemsearch.do?keyValue=00000000&target=ARTI&searchField=BI&displayCount=10&startPosition=1&sortby=pubyear&returnType=xml&responseGroup=simple&query=LED";
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		ExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+
 		Future<String> future = executorService.submit(new Callable<String>() {
 			public String call() throws Exception {
 				URL url = new URL(openApiUrl);
@@ -55,5 +55,7 @@ public class FutureTest {
 		String result = future.get();
 
 		System.out.println(result);
+
+		executorService.shutdown();
 	}
 }
