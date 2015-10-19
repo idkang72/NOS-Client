@@ -1,5 +1,5 @@
 package net.waglewagle.nos;
 
-public interface QueryResult {
+public interface QueryResult<E> {
 	public QueryResultMetaData getMetaData();
 }

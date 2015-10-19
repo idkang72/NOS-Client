@@ -9,7 +9,7 @@ import net.waglewagle.nos.QueryResult;
  * @since 2015. 10. 15
  */
 public interface ArticleSearch {
-	public QueryResult query(String query, int page, int pageSize);
+	public QueryResult<Article> query(String query, int page, int pageSize);
 
-	public QueryResult query(Target target, SearchField field, ResponseGroup responseGroup, String query);
+	public QueryResult<Article> query(Target target, SearchField field, ResponseGroup responseGroup, String query);
 }
