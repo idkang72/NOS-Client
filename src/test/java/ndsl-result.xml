@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData>
+	<resultSummary>
+		<totalCount>439206</totalCount>
+		<processingTime>1.26</processingTime>
+		<token>172007479226199196835377466371822667731</token>
+	</resultSummary>
+	<inputData>
+		<searchfield>BI</searchfield>
+		<responsegroup>advance</responsegroup>
+		<returntype>xml</returntype>
+		<target>ARTI</target>
+		<displaycount>10</displaycount>
+		<keyvalue>00000000</keyvalue>
+		<query>&lt;![CDATA[LED]]&gt;</query>
+		<startposition>11</startposition>
+		<sortby>pubyear</sortby>
+	</inputData>
+	<outputData>
+		<record dbCode="JAFO" kistiID="NART73063651" number="1" rank="">
+			<journalInfo kistiID="NJOU00006023">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Applied ergonomics]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0003-6870</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="258">52</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73063651">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Ergonomic approach for pillow concept design]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[Sleep quality is an essential factor to human beings for health. The current paper conducted four studies to provide a suitable pillow for promoting sleep quality. Study 1 investigated the natural positions of 40 subjects during sleep to derive key-points for a pillow design. The results suggested that the supine and lateral positions were alternatively 24 times a night, and the current pillows were too high for the supine position and too low for lateral positions. Study 2 measured body dimensions related to pillow design of 40 subjects to determine pillow sizes. The results suggested that the pillow height were quite different in supine position and lateral position and needed to take into consideration for a pillow design. Study 3 created a pillow design based on the results of above studies. The pillow was a U-form in the front of view in which the pillow height in the middle area was lower for the supine position, and both sides were higher for the lateral positions. Study 4 assessed sleep quality of 6 subjects by using the proposed pillows and the current pillows. The results showed that the newly designed pillow led to significantly higher sleep quality, and the new design received an innovation patent.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Cai, D.</author>
+					<author number="2">Chen, H.L.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Ergonomic+approach+for+pillow+concept+design&amp;issn=0003-6870+%40&amp;volume=52&amp;date=2016&amp;spage=pp.142-150&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73063651%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.142-150</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73063651
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73063651&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Sleep position . Sleep duration . Sleep quality . Pillow
+					design . Ergonomic design</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73066040" number="2" rank="">
+			<journalInfo kistiID="NJOU00008160">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Geoderma]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0016-7061</issn>
+					<issn>1872-6259</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="448">261</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73066040">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Mapping soil organic carbon content by geographically weighted regression: A case study in the Heihe River Basin, China]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[In large heterogeneous areas the relationship between soil organic carbon (SOC) and environmental covariates may vary throughout the area, bringing about difficulty for accurate modeling of the regional SOC variation. The benefit of local, geographically weighted regression (GWR) coefficients was tested in a case study on soil organic carbon mapping across a 50,810km  2  area in northwestern China. This area is composed of an alpine ecosystem in the upper reaches and oases in the middle reaches. The benefit was quantified by comparing the quality of the maps obtained by GWR and geographically weighted ridge regression (GWRR) on the one side and multiple linear regression (MLR) on the other side. In these methods spatial dependence of model residuals is ignored. The root mean squared error (RMSE) of predictions of natural log-transformed SOC obtained with GWR was smaller than with MLR: 0.565 versus 0.618g/kg. The use of a local ridge parameter in GWRR did not lead to an increase in accuracy. Besides we compared the quality of maps obtained by geographically weighted regression followed by simple kriging of model residuals (GWRSK) and kriging with an external drift (KED) with global regression coefficients. In these methods the spatial dependence of model residuals is incorporated in the model. The RMSE with KED was smaller than with GWRSK: 0.515 versus 0.546g/kg. We conclude that fitting regression coefficients locally as in GWR only paid when no spatial random effect was included in the model. When a spatial random effect was included, the flexibility of local, geographically weighted regression coefficients was not needed and even undesirable as it led to less accurate predictions than KED with global regression coefficients. In comparing the accuracy of prediction methods by leave-one-out cross-validation (LOOCV) of a non-probability sample it is important to account for possible autocorrelation of pairwise differences in the prediction errors. The effective sample sizes were substantially smaller than the total number of sampling points, so that most pairwise differences in MSE were not significant at a significance level of 10% in a two-sided paired t-test.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Song, X.D.</author>
+					<author number="2">Brus, D.J.</author>
+					<author number="3">Liu, F.</author>
+					<author number="4">Li, D.C.</author>
+					<author number="5">Zhao, Y.G.</author>
+					<author number="6">Yang, J.L.</author>
+					<author number="7">Zhang, G.L.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Mapping+soil+organic+carbon+content+by+geographically+weighted+regression%3A+A+case+study+in+the+Heihe+River+Basin%2C+China&amp;issn=0016-7061+%40+1872-6259+%40&amp;volume=261&amp;date=2016&amp;spage=pp.11-22&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73066040%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.11-22</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73066040
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73066040&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Digital soil mapping . Kriging with an external drift (KED)
+					. Restricted maximum likelihood (REML) . Map accuracy .
+					Cross-validation . Effective sample size</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73066046" number="3" rank="">
+			<journalInfo kistiID="NJOU00008160">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Geoderma]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0016-7061</issn>
+					<issn>1872-6259</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="448">261</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73066046">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Bioenergy maize and soil erosion - Risk assessment and erosion control concepts]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[In the last decade, legislative incentives have led to a significant increase in maize cultivation for the generation of energy from biomass in Germany. The expansion of maize acreage resulted in an increased risk of water erosion due to the low vegetative soil cover after the seeding of the maize and the linear structure and great distance of the maize rows. Soil erosion is considered a major threat to food security and causes damages both on-site and off-site, i.e., to adjacent infrastructures and surface waters. In this study we investigated the effectiveness of six main erosion control concepts in terms of their reduction of damages using the physically based model Erosion-3D. Simulations were carried out based on an agricultural site in Brandenburg, Germany, for three different rainfall events with average recurrence intervals of 2, 20 and 100years. No-tillage and conservation tillage showed the strongest erosion mitigation potential with reduction rates of up to 90 to 100%. Contour buffer strips and vegetated waterways have only very small erosion mitigation effects. Medium erosion reduction rates were simulated for the division of the field into smaller parcels or strips (alternating maize and winter cereal crops). We conclude that no-tillage or conservation tillage is the most recommendable erosion control measure. However, further research needs to be done on the potential of no-tillage and conservation tillage to increase preferential flow paths, their effect on the vertical outflow rate of pesticides and herbicides into groundwater resources and ways to mitigate these adverse effects. Vegetated waterways and contour buffer strips can be combined with other erosion control measures and entail only a minimal reduction in cultivation area. Their installation is relatively low priced, however, additional maintenance costs may be incurred. Noteworthy reduction rates could only be shown for rainfall events with short return periods. The division of the field into winter grain and maize cultivation areas leads to substantial erosion mitigation rates, but has to be seen in context with the reduction of maize cultivation area. The long-term benefits of decreasing maize acreage under specific circumstances might, however, outweigh the reduced benefits of maize production.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Vogel, E.</author>
+					<author number="2">Deumlich, D.</author>
+					<author number="3">Kaupenjohann, M.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Bioenergy+maize+and+soil+erosion+-+Risk+assessment+and+erosion+control+concepts&amp;issn=0016-7061+%40+1872-6259+%40&amp;volume=261&amp;date=2016&amp;spage=pp.80-92&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73066046%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.80-92</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73066046
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73066046&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Soil erosion modelling . Erosion control . Erosion
+					mitigation . Bioenergy . Maize . Extreme precipitation events
+				</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73090114" number="4" rank="">
+			<journalInfo kistiID="NJOU00000191">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Biosensors   bioelectronics]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0265-928x</issn>
+					<issn>0265-928x</issn>
+					<issn>0956-5663</issn>
+					<issn>1873-4235</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="294">75</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73090114">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Facile fabrication of an aptasensor for thrombin based on graphitic carbon nitride/TiO2 with high visible-light photoelectrochemical activity]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[A novel aptasensor for thrombin with high visible-light activity was facilely fabricated based on graphitic carbon nitride/TiO  2  (g-C  3  N  4  /TiO  2  ) photoelectrochemical (PEC) composite. Crystallization of TiO  2  nanoparticles (NPs) and their strong interaction with g-C  3  N  4  sheet were confirmed by high-resolution transmission electron microscope (HR-TEM), both of which contributed to the high photocurrent intensity under visible-light irradiation. Carboxyl functionalized thrombin aptamers were first successfully bound to the g-C  3  N  4  /TiO  2  modified electrode as proven by photoelectrochemical test and electrochemical impedance spectroscopy (EIS) analysis. Ascorbic acid was utilized as the electron donor for scavenging photo-generated holes and inhibiting light driven electron-hole pair recombination. The specific recognition between thrombin aptamer and thrombin led to the linear decrease of photocurrent with the increase of logarithm of thrombin concentration in the range of 5.0x10  -13  molL  -1  to 5.0x10  -9  molL  -1  with a detection limit of 1.2x10  -13  molL  -1  . This proposed low-cost, convenient and sensitive aptasensor showed promising applications in biosensor and photoelectrochemical analysis.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Fan, D.</author>
+					<author number="2">Guo, C.</author>
+					<author number="3">Ma, H.</author>
+					<author number="4">Zhao, D.</author>
+					<author number="5">Li, Y.</author>
+					<author number="6">Wu, D.</author>
+					<author number="7">Wei, Q.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Facile+fabrication+of+an+aptasensor+for+thrombin+based+on+graphitic+carbon+nitride%2FTiO2+with+high+visible-light+photoelectrochemical+activity&amp;issn=0265-928x+%40+0265-928x+%40+0956-5663+%40+1873-4235+%40&amp;volume=75&amp;date=2016&amp;spage=pp.116-122&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73090114%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.116-122</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73090114
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73090114&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Aptasensor . g-C lt</keyword>
+				<keyword>SUB gt</keyword>
+				<keyword>3 lt</keyword>
+				<keyword>/SUB gt</keyword>
+				<keyword>N lt</keyword>
+				<keyword>SUB gt</keyword>
+				<keyword>4 lt</keyword>
+				<keyword>/SUB gt</keyword>
+				<keyword>/TiO lt</keyword>
+				<keyword>SUB gt</keyword>
+				<keyword>2 lt</keyword>
+				<keyword>/SUB gt</keyword>
+				<keyword>. Thrombin . Visible-light . Photoelectrochemical activity
+				</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73090120" number="5" rank="">
+			<journalInfo kistiID="NJOU00000191">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Biosensors   bioelectronics]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0265-928x</issn>
+					<issn>0265-928x</issn>
+					<issn>0956-5663</issn>
+					<issn>1873-4235</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="294">75</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73090120">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Label-free and enzyme-free detection of transcription factors with graphene oxide fluorescence switch-based multifunctional G-quadruplex-hairpin probe]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[Transcription factors (TFs) play pivotal roles in the regulation of a variety of essential cellular processes and some of them have been recognized as potential diagnostic markers and therapeutic targets of some diseases. Sensitive and accurate detection of TFs is of great importance to better understanding their roles in gene regulation and evaluation of disease state. Here, we developed a simple, label-free and enzyme-free new fluorescent strategy for the detection of TFs by graphene oxide (GO) fluorescence switch-based multifunctional G-quadruplex-hairpin probe (MGHP). The MGHP possessed of three functions simultaneously, adsorbing onto GO with the loop part, binding to target with the stem part and serving as signal carrier with the terminal G-quadruplex. First, the MGHP was adsorbed quickly to GO. Next, the TF bound to the stem part of MGHP to form a huge target-MGHP complex, which led to desorption of the complex from GO. Finally, NMM was inserted into G-quadruplex in the complex to yield an enhanced fluorescence response. The GO used here, as a fluorescence switch, could quickly and efficiently quench the fluorescence of NMM inserted into the MGHP absorbed on the GO, guaranteeing a high signal-to-noise ratio. Sensitive detection of purified NF- kappa;B p50 and HeLa cell nuclear extracts were achieved with detection limits of 0.2nM and 7.8ng/@?L, respectively. Moreover, this proposed strategy could be used to screen inhibitors of NF- kappa;B p50 activity. The strategy proposed here might offer a new potential approach for reliable quantification of TFs in clinical diagnostics and treatment research of some diseases.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Zhu, D.</author>
+					<author number="2">Wang, L.</author>
+					<author number="3">Xu, X.</author>
+					<author number="4">Jiang, W.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Label-free+and+enzyme-free+detection+of+transcription+factors+with+graphene+oxide+fluorescence+switch-based+multifunctional+G-quadruplex-hairpin+probe&amp;issn=0265-928x+%40+0265-928x+%40+0956-5663+%40+1873-4235+%40&amp;volume=75&amp;date=2016&amp;spage=pp.155-160&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73090120%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.155-160</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73090120
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73090120&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Multifunctional G-quadruplex-hairpin probe . Graphene oxide
+					. Label-free . Enzyme-free . Fluorescent detection . Transcription
+					factors</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73091474" number="6" rank="">
+			<journalInfo kistiID="NJOU00016412">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Ultrasonics sonochemistry]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>1350-4177</issn>
+					<issn>1873-2828</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="115">28</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73091474">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Ultrasound aided smooth dispensing for high viscoelastic epoxy in microelectronic packaging]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[Epoxy dispensing is one of the most critical processes in microelectronic packaging. However, due its high viscoelasticity, dispensing of epoxy is extremely difficult, and a lower viscoelasticity epoxy is desired to improve the process. In this paper, a novel method is proposed to achieve a lowered viscoelastic epoxy by using ultrasound. The viscoelasticity and molecular structures of the epoxies were compared and analyzed before and after experimentation. Different factors of the ultrasonic process, including power, processing time and ultrasonic energy, were studied in this study. It is found that elasticity is more sensitive to ultrasonic processing while viscosity is little affected. Further, large power and long processing time can minimize the viscoelasticity to ideal values. Due to the reduced loss modulus and storage modulus after ultrasonic processing, smooth dispensing is demonstrated for the processed epoxy. The subsequently color temperature experiments show that ultrasonic processing will not affect LED's lighting. It is clear that the ultrasonic processing will have good potential to aide smooth dispensing for high viscoelastic epoxy in electronic industry.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Chen, Y.</author>
+					<author number="2">Li, H.X.</author>
+					<author number="3">Shan, X.</author>
+					<author number="4">Gao, J.</author>
+					<author number="5">Chen, X.</author>
+					<author number="6">Wang, F.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Ultrasound+aided+smooth+dispensing+for+high+viscoelastic+epoxy+in+microelectronic+packaging&amp;issn=1350-4177+%40+1873-2828+%40&amp;volume=28&amp;date=2016&amp;spage=pp.15-20&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73091474%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.15-20</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091474
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091474&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Lowering viscoelasticity . Ultrasonic processing . Epoxy .
+					Fluid dispensing</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73091473" number="7" rank="">
+			<journalInfo kistiID="NJOU00016412">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Ultrasonics sonochemistry]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>1350-4177</issn>
+					<issn>1873-2828</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="115">28</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73091473">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Modeling bubble dynamics and radical kinetics in ultrasound induced microalgal cell disruption]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[Microalgal cell disruption induced by acoustic cavitation was simulated through solving the bubble dynamics in an acoustical field and their radial kinetics (chemical kinetics of radical species) occurring in the bubble during its oscillation, as well as calculating the bubble wall pressure at the collapse point. Modeling results indicated that increasing ultrasonic intensity led to a substantial increase in the number of bubbles formed during acoustic cavitation, however, the pressure generated when the bubbles collapsed decreased. Therefore, cumulative collapse pressure (CCP) of bubbles was used to quantify acoustic disruption of a freshwater alga, Scenedesmus dimorphus, and a marine alga, Nannochloropsis oculata and compare with experimental results. The strong correlations between CCP and the intracellular lipid fluorescence density, chlorophyll-a fluorescence density, and cell particle/debris concentration were found, which suggests that the developed models could accurately predict acoustic cell disruption, and can be utilized in the scale up and optimization of the process.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Wang, M.</author>
+					<author number="2">Yuan, W.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Modeling+bubble+dynamics+and+radical+kinetics+in+ultrasound+induced+microalgal+cell+disruption&amp;issn=1350-4177+%40+1873-2828+%40&amp;volume=28&amp;date=2016&amp;spage=pp.7-14&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73091473%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.7-14</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091473
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091473&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Acoustic cavitation . Bubble dynamics . Cell disruption .
+					Microalgae . Radical kinetics</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73091481" number="8" rank="">
+			<journalInfo kistiID="NJOU00016412">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Ultrasonics sonochemistry]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>1350-4177</issn>
+					<issn>1873-2828</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="115">28</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73091481">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Ultrasonically induced ZnO-biosilica nanocomposite for degradation of a textile dye in aqueous phase]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[In the present study, a porous clay-like support with unique characteristics was used for the synthesis and immobilization of ZnO nanostructures to be used as sonocatalyst for the sonocatalytic decolorization of methylene blue (MB) dye in the aqueous phase. As a result, the sonocatalytic activity of ZnO-biosilica nanocomposite (77.8%) was higher than that of pure ZnO nanostructures (53.6%). Increasing the initial pH from 3 to 10 led to increasing the color removal from 41.8% to 88.2%, respectively. Increasing the sonocatalyst dosage from 0.5 to 2.5g/L resulted in increasing the color removal, while further increase up to 3g/L caused an obvious drop in the color removal. The sonocatalysis of MB dye over ZnO-biosilica nanocomposite was temperature-dependent. The presence of methanol produced the most adverse effect on the sonocatalysis of MB dye. The addition of chloride and carbonate ions had a negligible effect on the sonocatalysis, while the addition of persulfate ion led to increasing the color removal from 77.8% to 99.4% during 90min. The reusability test exhibited a 15% drop in the color removal (%) within three consecutive experimental runs. A mineralization efficiency of 63.2% was obtained within 4h.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Darvishi Cheshmeh Soltani, R.</author>
+					<author number="2">Jorfi, S.</author>
+					<author number="3">Ramezani, H.</author>
+					<author number="4">Purfadakari, S.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Ultrasonically+induced+ZnO-biosilica+nanocomposite+for+degradation+of+a+textile+dye+in+aqueous+phase&amp;issn=1350-4177+%40+1873-2828+%40&amp;volume=28&amp;date=2016&amp;spage=pp.69-78&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73091481%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.69-78</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091481
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091481&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Sonocatalysis . Siliceous support . ZnO nanostructure .
+					Immobilization . Textile dye</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART73091573" number="9" rank="">
+			<journalInfo kistiID="NJOU00016412">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Ultrasonics sonochemistry]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>1350-4177</issn>
+					<issn>1873-2828</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="115">28</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART73091573">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Sonocatalytic injury of cancer cells attached on the surface of a nickel-titanium dioxide alloy plate]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[The present study demonstrates ultrasound-induced cell injury using a nickel-titanium dioxide (Ni-TiO  2  ) alloy plate as a sonocatalyst and a cell culture surface. Ultrasound irradiation of cell-free Ni-TiO  2  alloy plates with 1MHz ultrasound at 0.5W/cm  2  for 30s led to an increased generation of hydroxyl (OH) radicals compared to nickel-titanium (Ni-Ti) control alloy plates with and without ultrasound irradiation. When human breast cancer cells (MCF-7 cells) cultured on the Ni-TiO  2  alloy plates were irradiated with 1MHz ultrasound at 0.5W/cm  2  for 30s and then incubated for 48h, cell density on the alloy plate was reduced to approximately 50% of the controls on the Ni-Ti alloy plates with and without ultrasound irradiation. These results indicate the injury of MCF-7 cells following sonocatalytic OH radical generation by Ni-TiO  2  . Further experiments demonstrated cell shrinkage and chromatin condensation after ultrasound irradiation of MCF-7 cells attached on the Ni-TiO  2  alloy plates, indicating induction of apoptosis.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Ninomiya, K.</author>
+					<author number="2">Maruyama, H.</author>
+					<author number="3">Ogino, C.</author>
+					<author number="4">Takahashi, K.</author>
+					<author number="5">Shimizu, N.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Sonocatalytic+injury+of+cancer+cells+attached+on+the+surface+of+a+nickel-titanium+dioxide+alloy+plate&amp;issn=1350-4177+%40+1873-2828+%40&amp;volume=28&amp;date=2016&amp;spage=pp.1-6&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART73091573%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.1-6</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091573
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART73091573&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Ultrasound . Titanium dioxide . Sonocatalytic reaction .
+					Nickel-titanium alloy plate . Cancer cells</keyword>
+			</articleInfo>
+		</record>
+		<record dbCode="JAFO" kistiID="NART72401169" number="10" rank="">
+			<journalInfo kistiID="NJOU00004584">
+				<publisher />
+				<journalTitleInfo>
+					<journalTitle><![CDATA[Food chemistry]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0308-8146</issn>
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="606">190</volume>
+				<issue />
+				<year>2016</year>
+				<content_url>http://www.sciencedirect.com/science/journal/00323861
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<holdingflag />
+			</journalInfo>
+			<articleInfo kistiID="NART72401169">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[Pre-harvest application of oxalic acid increases quality and resistance to Penicillium expansum in kiwifruit during postharvest storage]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[Kiwifruit (Actinidia deliciosa cv. Bruno) fruits were sprayed with 5mM oxalic acid (OA) at 130, 137, and 144days after full blossom, and then harvested at commercial maturity [soluble solid content (SSC) around 10.0%] and stored at room temperature (20+/-1  o  C). Pre-harvest application of OA led to fruit with higher ascorbic acid content at harvest, slowed the decreases in fruit firmness and ascorbic acid content and increase in SSC during storage, and also decreased the natural disease incidence, lesion diameter, and patulin accumulation in fruit inoculated with Penicillium expansum, indicating that the OA treatment increased quality and induced disease resistance in kiwifruit. It was suggested that the increase in activities of defense-related enzymes and in levels of substances related to disease resistance might collectively contribute to resistance in kiwifruit against fungi such as P. expansum in storage.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">Zhu, Y.</author>
+					<author number="2">Yu, J.</author>
+					<author number="3">Brecht, J.K.</author>
+					<author number="4">Jiang, T.</author>
+					<author number="5">Zheng, X.</author>
+				</authorInfo>
+				<content_url>http://click.ndsl.kr/servlet/resolverService?sid=ksci&amp;genre=article&amp;atitle=Pre-harvest+application+of+oxalic+acid+increases+quality+and+resistance+to+Penicillium+expansum+in+kiwifruit+during+postharvest+storage&amp;issn=0308-8146+%40&amp;volume=190&amp;date=2016&amp;spage=pp.537-543&amp;pid=%3Cprivate_id%3Eorg_code%3D0260%26site_code%3DSS9999%26kscino%3D%26cen%3D%26ndslartctrlno%3DNART72401169%3C%2Fprivate_id%3E
+				</content_url>
+				<urlflag>2</urlflag>
+				<abstractflag>1</abstractflag>
+				<page>pp.537-543</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART72401169
+				</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=00000000&amp;target=NART&amp;cn=NART72401169&amp;type=mobile
+				</mobilelink>
+				<sciencesub />
+				<keyword>Disease resistance . Kiwifruit . Oxalic acid . Penicillium
+					expansum . Preharvest spraying . Patulin . Storage</keyword>
+			</articleInfo>
+		</record>
+	</outputData>
+</MetaData>
+
