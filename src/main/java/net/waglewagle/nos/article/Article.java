@@ -1,6 +1,9 @@
 package net.waglewagle.nos.article;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import net.waglewagle.nos.NdslRecord;
 
 /**
  * <p>NDSL 기사 정보를 담는 클래스.</p>
@@ -8,14 +11,11 @@ import java.util.List;
  * @author 강신원
  * @since 2015. 10. 19
  */
-public class Article {
+public class Article extends NdslRecord {
 	/** 콘텐츠 유형: record[dbCode] */
 	private String dbCode;
 
 	private Target target;
-
-	/** NDSL 콘텐츠 식별값(CN): record[kistiID]. */
-	private String kistiID;
 
 	/** 저널 객체. */
 	private Journal journal;
@@ -81,30 +81,6 @@ public class Article {
 		this.target = target;
 	}
 
-	/**
-	 * @return the kistiID
-	 */
-	public String getKistiID() {
-		return kistiID;
-	}
-
-
-	/**
-	 * <p>NDSL 콘텐츠식별값을 얻는다.</p>
-	 * <p>{@link #getKistiID()} 호출한 결과와 같다.</p>
-	 *
-	 * @return
-	 */
-	public String getCN() {
-		return kistiID;
-	}
-
-	/**
-	 * @param kistiID the kistiID to set
-	 */
-	public void setKistiID(String kistiID) {
-		this.kistiID = kistiID;
-	}
 
 	/**
 	 * @return the journal
@@ -137,14 +113,14 @@ public class Article {
 	/**
 	 * @return the abs
 	 */
-	public String getAbs() {
+	public String getAbstract() {
 		return abs;
 	}
 
 	/**
 	 * @param abs the abs to set
 	 */
-	public void setAbs(String abs) {
+	public void setAbstract(String abs) {
 		this.abs = abs;
 	}
 
@@ -161,6 +137,26 @@ public class Article {
 	public void setAuthorList(List<Author> authorList) {
 		this.authorList = authorList;
 	}
+
+	public void addAuthor(String author) {
+		if ( author == null || "".equals(author.trim())) return;
+
+		if ( this.authorList == null ) {
+			this.authorList = new ArrayList<Author>();
+		}
+
+		this.authorList.add(new Author(author));
+	}
+
+
+	public void addAuthor(Author author) {
+		if ( this.authorList == null ) {
+			this.authorList = new ArrayList<Author>();
+		}
+
+		this.authorList.add(author);
+	}
+
 
 	/**
 	 * @return the contentUrl
@@ -272,5 +268,15 @@ public class Article {
 	 */
 	public void setKeywordList(List<String> keywordList) {
 		this.keywordList = keywordList;
+	}
+
+	public void addKeyword(String keyword) {
+		if ( keyword == null || "".equals(keyword.trim()) ) return;
+
+		if ( this.keywordList == null ) {
+			this.keywordList = new ArrayList<String>();
+		}
+
+		this.keywordList.add(keyword);
 	}
 }

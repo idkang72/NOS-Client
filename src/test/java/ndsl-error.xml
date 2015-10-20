@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MetaData>
+	<resultSummary>
+		<totalCount>0</totalCount>
+		<processingTime>0.046</processingTime>
+	</resultSummary>
+	<inputData>
+		<searchfield>BI</searchfield>
+		<responsegroup>advance</responsegroup>
+		<returntype>xml</returntype>
+		<target>ARTI</target>
+		<displaycount>10</displaycount>
+		<keyvalue>X00000000</keyvalue>
+		<query>
+			<![CDATA[LED]]>
+		</query>
+		<startposition>11</startposition>
+		<sortby>pubyear</sortby>
+	</inputData>
+	<outputData>
+		<errorMasseage>인증받지 않은 Key : ParameterName=keyValue</errorMasseage>
+	</outputData>
+</MetaData>

@@ -40,4 +40,15 @@ public enum ResponseGroup {
 	public String getTitle() {
 		return title;
 	}
+
+
+	public static ResponseGroup find(String name) {
+	    for (ResponseGroup e : values()) {
+	        if (e.value.equals(name)) {
+	            return e;
+	        }
+	    }
+
+	    return null;
+	}
 }

@@ -10,7 +10,7 @@ import jodd.io.StreamUtil;
 import junit.framework.TestCase;
 
 public class HttpTest extends TestCase {
-	private final static String openApiUrl = "http://openapi.ndsl.kr/itemsearch.do?keyValue=00000000&target=ARTI&searchField=BI&displayCount=10&startPosition=1&sortby=pubyear&returnType=xml&responseGroup=simple&query=LED";
+	private final static String openApiUrl = "http://openapi.ndsl.kr/itemsearch.do?keyValue=08702579&target=ARTI&searchField=BI&displayCount=10&startPosition=1&sortby=pubyear&returnType=xml&responseGroup=simple&query=LED";
 
 	public void test1() {
 		HttpRequest httpReq = HttpRequest.get(openApiUrl);
