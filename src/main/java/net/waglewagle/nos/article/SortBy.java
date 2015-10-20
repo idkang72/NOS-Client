@@ -43,4 +43,15 @@ public enum SortBy {
 	public String getTitle() {
 		return title;
 	}
+
+
+	public static SortBy find(String name) {
+	    for (SortBy e : values()) {
+	        if (e.value.equals(name)) {
+	            return e;
+	        }
+	    }
+
+	    return null;
+	}
 }
