@@ -17,3 +17,6 @@ Java Client Library for KiSTi NDSL NOS Open API(http://nos.ndsl.kr/)
 * java.concurrency 패키지를 이용해 보자
   - Excutor, Callable, Future
 * Generic을 활용할 거다. 그러니 당연히 Java는 5 버전 이상에서 동작한다.
+* LICENSE는 LGPL v.3 로 변경: 
+  - 쓸 사람이 있을래나? ^^;
+  - 아시죠? 문제 있으면 알아서.
