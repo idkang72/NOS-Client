@@ -19,8 +19,8 @@ import net.waglewagle.nos.http.BaseResponseHandler;
  * @author 강신원
  * @since 2015. 10. 20
  */
-public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<ArticleInputData, Article>> {
-	public QueryResult<ArticleInputData, Article> handle(InputStream is, String encoding) throws IOException {
+public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<ArticleInputData, NdslArticle>> {
+	public QueryResult<ArticleInputData, NdslArticle> handle(InputStream is, String encoding) throws IOException {
 		ArticleSearchResultXmlHandler handler = new ArticleSearchResultXmlHandler();
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -39,7 +39,7 @@ public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<
 		}
 
 
-		QueryResult<ArticleInputData, Article> result = handler.getQueryResult();
+		QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
 
 		System.out.println("Count: " + result.getCount());
 

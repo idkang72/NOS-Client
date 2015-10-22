@@ -11,14 +11,14 @@ import net.waglewagle.nos.NdslRecord;
  * @author 강신원
  * @since 2015. 10. 19
  */
-public class Article extends NdslRecord {
+public class NdslArticle extends NdslRecord {
 	/** 콘텐츠 유형: record[dbCode] */
 	private String dbCode;
 
 	private Target target;
 
 	/** 저널 객체. */
-	private Journal journal;
+	private NdslJournal journal;
 
 	/** 제목: record/articleInfo/articleTitleInfo/articleTitle. */
 	private String title;
@@ -27,7 +27,7 @@ public class Article extends NdslRecord {
 	private String abs;
 
 	/** 저자 목록:  record/articleInfo/authorInfo/author  */
-	private List<Author> authorList;
+	private List<NdslAuthor> authorList;
 
 	/** 원문보기 URL: record/articleInfo/content_url */
 	private String contentUrl;
@@ -85,14 +85,14 @@ public class Article extends NdslRecord {
 	/**
 	 * @return the journal
 	 */
-	public Journal getJournal() {
+	public NdslJournal getJournal() {
 		return journal;
 	}
 
 	/**
 	 * @param journal the journal to set
 	 */
-	public void setJournal(Journal journal) {
+	public void setJournal(NdslJournal journal) {
 		this.journal = journal;
 	}
 
@@ -127,14 +127,14 @@ public class Article extends NdslRecord {
 	/**
 	 * @return the authorList
 	 */
-	public List<Author> getAuthorList() {
+	public List<NdslAuthor> getAuthorList() {
 		return authorList;
 	}
 
 	/**
 	 * @param authorList the authorList to set
 	 */
-	public void setAuthorList(List<Author> authorList) {
+	public void setAuthorList(List<NdslAuthor> authorList) {
 		this.authorList = authorList;
 	}
 
@@ -142,16 +142,16 @@ public class Article extends NdslRecord {
 		if ( author == null || "".equals(author.trim())) return;
 
 		if ( this.authorList == null ) {
-			this.authorList = new ArrayList<Author>();
+			this.authorList = new ArrayList<NdslAuthor>();
 		}
 
-		this.authorList.add(new Author(author));
+		this.authorList.add(new NdslAuthor(author));
 	}
 
 
-	public void addAuthor(Author author) {
+	public void addAuthor(NdslAuthor author) {
 		if ( this.authorList == null ) {
-			this.authorList = new ArrayList<Author>();
+			this.authorList = new ArrayList<NdslAuthor>();
 		}
 
 		this.authorList.add(author);

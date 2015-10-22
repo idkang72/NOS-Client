@@ -1,15 +1,15 @@
 package net.waglewagle.nos.article;
 
-public class Author {
+public class NdslAuthor {
 	/** 저자명. */
 	private String name;
 
 
-	public Author() {
+	public NdslAuthor() {
 
 	}
 
-	public Author(String name) {
+	public NdslAuthor(String name) {
 		this.name = name;
 	}
 

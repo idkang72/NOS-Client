@@ -25,11 +25,11 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, Article> result = handler.getQueryResult();
+			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 
-			for (Article article : handler.getQueryResult()) {
+			for (NdslArticle article : handler.getQueryResult()) {
 				System.out.printf("%s%n    in %s%n", article.getTitle(), article.getJournal().getTitle());
 			}
 
@@ -67,7 +67,7 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, Article> result = handler.getQueryResult();
+			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 

@@ -48,14 +48,14 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 		/** 현재 진행 중인 ArticleInputData 객체. */
 		private ArticleInputData inputData;
 
-		/** 현재 진행 중인 Article 객체. */
-		private Article article;
+		/** 현재 진행 중인 NdslArticle 객체. */
+		private NdslArticle article;
 
-		/** 현재 진행 중인 Dissertation 객체. */
-		private Dissertation dissertation;
+		/** 현재 진행 중인 NdslDissertation 객체. */
+		private NdslDissertation dissertation;
 
-		/** 현재 진행 중인 Journal 객체. */
-		private Journal journal;
+		/** 현재 진행 중인 NdslJournal 객체. */
+		private NdslJournal journal;
 
 		/** 현재 진행 중인 자료 종류. */
 		private RecordType recordType;
@@ -86,7 +86,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 
 			this.currentTag = qName;
 
-			System.out.printf("<%s>", qName);
+			// System.out.printf("<%s>", qName);
 			if ( "inputData".equals(qName) ) {
 				this.inputData = new ArticleInputData();
 			}
@@ -97,13 +97,13 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 			}
 			else if ( "journalInfo".equals(qName) ) {
 				this.recordType = RecordType.JOURNAL;
-				this.journal = new Journal();
+				this.journal = new NdslJournal();
 
 				this.journal.setKistiID(attributes.getValue(uri, "kistiID"));
 			}
 			else if ( "articleInfo".equals(qName) ) {
 				this.recordType = RecordType.ARTICLE;
-				this.article = new Article();
+				this.article = new NdslArticle();
 
 				this.article.setDbCode(this.dbCode);
 				this.article.setKistiID(attributes.getValue(uri, "kistiID"));
@@ -111,7 +111,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 			else if ( "dissertation".equals(qName) ) {
 				this.recordType = RecordType.DISSERTATION;
 
-				this.dissertation = new Dissertation();
+				this.dissertation = new NdslDissertation();
 
 				this.dissertation.setDbCode (this.dbCode );
 				this.dissertation.setKistiID(this.kistiID);
@@ -169,7 +169,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 		private void setText(String text) {
 			if ( "".equals(text.trim()) ) return;
 
-			System.out.printf("%s%n", text);
+			// System.out.printf("%s%n", text);
 
 
 			ArticleQueryResult queryResult = getQueryResult();

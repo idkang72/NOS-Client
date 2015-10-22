@@ -6,7 +6,7 @@ package net.waglewagle.nos.article;
  * @author 강신원
  * @since 2015. 10. 20
  */
-public class Dissertation extends Article {
+public class NdslDissertation extends NdslArticle {
 	private String schoolName;
 
 	/** 학위 구분. */

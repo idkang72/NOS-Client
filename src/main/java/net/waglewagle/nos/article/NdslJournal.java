@@ -11,7 +11,7 @@ import net.waglewagle.nos.NdslRecord;
  * @author 강신원
  * @since 2015. 10. 20
  */
-public class Journal extends NdslRecord  {
+public class NdslJournal extends NdslRecord  {
 	/** 출판사명. */
 	private String publisher;
 
