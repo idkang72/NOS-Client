@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<project name="NOS Client" default="jar">
+	<description>
+		NOS OpenAPI Client
+	</description>
+
+
+	<!-- 환경변수를 Property로 읽어들여온다.
+	     접두어는 env로 쓰는데 env.ANT_HOME식으로 사용한다. -->
+	<property environment="env" />
+
+	<!-- 빌드 시간관련 Property 생성 -->
+	<tstamp>
+		<format property="buildDate" pattern="yyyyMMdd" />
+		<format property="buildTime" pattern="HHmmss" />
+	</tstamp>
+
+	<!-- 프로젝트 build를 위한 기본 Property 정보 -->
+	<property name="project.id"     value="nos-client" />
+
+	<property name="build.name"    value="nos-client" />
+	<property name="build.version" value="0.1" />
+
+	<property name="prod.src.dir"   value="${basedir}/src/main/java" />
+	<property name="test.src.dir"   value="${basedir}/src/test/java" />
+
+	<property name="build.dir"      value="${basedir}/build" />
+	<property name="build.prod.dir" value="${build.dir}/prod" />
+	<property name="build.test.dir" value="${build.dir}/test" />
+	<property name="build.api.dir"    value="${build.dir}/api" />
+	<property name="build.java2html.dir"  value="${build.dir}/java2html" />
+	<property name="webroot.dir"    value="${basedir}/WebContent" />
+
+	<!-- PC내 Web Application 디렉토리로 복사를 위한 Property 정보 -->
+	<property name="tomcat.home" value="${env.TOMCAT_HOME}"/>
+	<property name="webapp.root.dir" value="${tomcat.home}" />
+
+	<!-- Application 실행시 필요한 Library 디렉토리 -->
+	<property name="lib.run.dir"         value="${webapp.root.dir}/WEB-INF/lib" />
+
+	<!-- Application 빌드시 필요한 Library 디렉토리 -->
+	<property name="lib.build.dir"       value="${basedir}/lib" />
+
+
+	<!-- 프로젝트 컴파일에 사용되는 classpath -->
+	<path id="project.classpath">
+		<pathelement location="${build.prod.dir}" />
+		<pathelement location="${build.test.dir}" />
+		<fileset dir="${lib.build.dir}">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+		<fileset dir="${webroot.dir}/WEB-INF/lib">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+
+
+	<target name="clean-all" description="빌드 디렉토리를 삭제한다.">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="prepare" description="빌드하기 전에 사전에 준비할 작업. 필요한 디렉토리를 생성한다.">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/prod" />
+		<mkdir dir="${build.dir}/test" />
+		<mkdir dir="${build.dir}/api" />
+		<mkdir dir="${build.dir}/java2html" />
+	</target>
+
+
+	<target name="compile" depends="prepare" description="Java를 컴파일한다.">
+		<!-- Java 소스를 컴파일한다. -->
+		<javac srcdir="${prod.src.dir}" destdir="${build.prod.dir}"
+			source="5" target="5"
+			encoding="UTF-8"
+			listfiles="true"
+			failonerror="true">
+			<classpath refid="project.classpath" />
+		</javac>
+		<echo>완료!</echo>
+
+		<!-- Application Resource 파일(XML제외) 복사 -->
+		<echo>리소스 파일 복사 중...</echo>
+		<copy todir="${build.prod.dir}"
+				description="웹 Application에서 사용되는 리소스 파일을 복사한다.">
+			<fileset dir="${prod.src.dir}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<echo>완료!</echo>
+	</target>
+
+
+	<target name="javadoc" depends="prepare" description="Javadoc을 생성한다.">
+		<javadoc destdir="${build.api.dir}"
+				author="true"
+				version="true"
+				use="true"
+				encoding="utf-8"
+				windowtitle="WagleWagle Simple Library API(Ver. ${build.version}">
+			<classpath refid="project.classpath" />
+		    <packageset dir="${prod.src.dir}" defaultexcludes="yes">
+				<include name="**/*"/>
+		    </packageset>
+		</javadoc>
+	</target>
+
+
+
+
+	<!-- 소스가 포함되지 않은 배포용 jar 파일을 생성한다. -->
+	<!-- {build.prod.dir} 기본 경로에 있는 파일은 설정파일들이므로 제외한다.-->
+	<target name="jar" depends="compile" description="배포를 위해 jar 파일을 생성한다">
+		<delete file="${build.dir}/${build.name}-${build.version}.jar" />
+		<mkdir dir="${build.prod.dir}/META-INF" />
+		<copy todir="${build.prod.dir}/META-INF" flatten="true">
+			<fileset dir="${build.prod.dir}" includes="**/*.tld" excludes="${build.dir}/META-INF" />
+		</copy>
+		<copy file="${basedir}/LICENSE" todir="${build.prod.dir}" />
+		<copy file="${basedir}/README.md" todir="${build.prod.dir}" />
+		<jar destfile="${build.dir}/${build.name}-${build.version}.jar" index="true">
+			<fileset dir="${build.prod.dir}" excludes="**/*.tld" />
+			<fileset dir="${build.prod.dir}" includes="META-INF/*.tld" />
+		</jar>
+	</target>
+
+
+	<!-- 소스 jar 파일을 생성한다. -->
+	<target name="jar-src" depends="compile" description="배포를 위해 jar 파일을 생성한다">
+		<delete file="${build.dir}/${build.name}-${build.version}-src.jar" />
+		<mkdir dir="${build.prod.dir}/META-INF" />
+		<copy todir="${build.prod.dir}/META-INF" flatten="true">
+			<fileset dir="${build.prod.dir}" includes="**/*.tld" excludes="${build.dir}/META-INF" />
+		</copy>
+		<copy file="${basedir}/LICENSE" todir="${build.prod.dir}" />
+		<copy file="${basedir}/README.md" todir="${build.prod.dir}" />
+		<jar destfile="${build.dir}/${build.name}-${build.version}-src.jar" index="true">
+			<fileset dir="${prod.src.dir}" />
+		</jar>
+	</target>
+
+
+	<!-- 소스를 포함한 배포용 jar 파일을 생성한다. -->
+	<target name="jar-include-src" depends="compile" description="배포를 위해 소스를 포함한 jar 파일을 생성한다">
+		<delete file="${build.dir}/${build.name}-${build.version}-with-src.jar" />
+		<mkdir dir="${build.prod.dir}/META-INF" />
+		<copy todir="${build.prod.dir}/META-INF" flatten="true">
+			<fileset dir="${build.prod.dir}" includes="**/*.tld" excludes="${build.dir}/META-INF" />
+		</copy>
+		<copy file="${basedir}/LICENSE" todir="${build.prod.dir}" />
+		<copy file="${basedir}/README.md" todir="${build.prod.dir}" />
+		<jar destfile="${build.dir}/${build.name}-${build.version}-with-src.jar" index="true">
+			<fileset dir="${build.prod.dir}" excludes="**/*.tld" />
+			<fileset dir="${build.prod.dir}" includes="META-INF/*.tld" />
+			<fileset dir="${prod.src.dir}"   includes="**/*.java" />
+		</jar>
+	</target>
+
+
+	<target name="tag.compile" depends="prepare" description="Java 파일을 컴파일 하고 자원 파일들을 복사한다.">
+		<!-- Java 파일 컴파일 -->
+		<javac srcdir="${tag.srcdir}" destdir="${tag.builddir}" debug="true" source="1.3" target="1.2">
+			<classpath refid="project.class.path" />
+		</javac>
+
+		<!-- 자원 파일(xml, prop*) 복사 -->
+		<copy todir="${tag.builddir}">
+			<fileset dir="${tag.srcdir}">
+				<include name="**/*.xml" />
+				<include name="**/*.prop*" />
+				<include name="**/*.tld" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<!-- Javadoc 문서를 생성한다. -->
+	<target name="api-doc" description="API Javadoc 문서를 생성한다.">
+		<javadoc destdir="docs/api"
+				access="protected"
+				source="1.5"
+				use="true"
+				notree="false"
+				nonavbar="false"
+				noindex="false"
+				splitindex="true"
+				author="true"
+				version="true"
+				nodeprecatedlist="false"
+				nodeprecated="false"
+				packagenames="net.waglewagle"
+				sourcepath="src"
+				classpath="WebRoot/WEB-INF/lib/commons-logging-1.0.4.jar;E:\was\jakarta-tomcat-5.0.28\common\lib\servlet-api.jar;WebRoot/WEB-INF/lib/struts-extras-1.3.5.jar;E:\was\jakarta-tomcat-5.0.28\common\lib\jsp-api.jar;WebRoot/WEB-INF/lib/ibatis-common-2.jar;WebRoot/WEB-INF/lib/struts-core-1.3.5.jar;WebRoot/WEB-INF/lib/ibatis-sqlmap-2.jar;WebRoot/WEB-INF/lib/commons-digester-1.6.jar;E:\was\jakarta-tomcat-5.0.28\common\lib\jasper-runtime.jar;WebRoot/WEB-INF/lib/ibatis-dao-2.jar"
+				doctitle="Otonas Simple Library Ver. ${build.version}"
+				additionalparam="-J-Xmx128m ">
+			<link href="http://docs.oracle.com/javase/1.5.0/docs/api/" />
+			<classpath></classpath>
+		</javadoc>
+	</target>
+
+</project>
