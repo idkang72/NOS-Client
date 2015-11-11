@@ -179,16 +179,23 @@ public class ArticleSearcherTest extends TestCase {
 			{ "120000060995" , "Tilia amurensis for. grosserrata"             }
 	};
 
+	private final static String [][] bios3 = {
+			{ "120000058269" , "Dasycottus"         },
+			{ "120000058271" , "Dasycottus sp"     },
+			{ "120000059265" , "Pleuronichthys"     },
+			{ "120000059267" , "Pleuronichthys sp" }
+	};
+
 	public void testQuery4() {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
 
 		StringBuilder buff = new StringBuilder();
-		for (int i = 0; i < bios2.length; i++) {
-			String ktsn   = bios2[i][0];
-			String scfcNm = bios2[i][1];
+		for (int i = 0; i < bios3.length; i++) {
+			String ktsn   = bios3[i][0];
+			String scfcNm = bios3[i][1];
 
 			String value = scfcNm.replaceAll(" +(subsp\\.|var\\.|for\\.) +", "#/w1#")
-					.replaceAll(" +", " /w0 ")
+					.replaceAll(" +", " & ")
 					.replaceAll("#", " ");
 
 			buff.delete(0, buff.length())
@@ -224,9 +231,10 @@ public class ArticleSearcherTest extends TestCase {
 		StringBuilder buff = new StringBuilder();
 		String name  = "Solar Sail Trajectory Design for Transferring Heliocentric Fixed Displaced Orbit";
 		//String value = "Solar /w0 (Sail /w1 Design)";
-		String value = "(Ulmus /w0 davidiana) & japonica";
+		//String value = "(Ulmus /w0 davidiana) & japonica";
 		//String value = "김치 /n0 (발효 /n2 효과)";
 		//String value = "Helicobacter /w0 (pylori /w0 urease)";
+		String value = "Metabolism /w0 of /w0 alpha-tocopherol /w0 and /w0 the /w0 isolation /w0 of /w0 a /w0 nontocopherol-reducing /w0 substance /w0 from /w0 animal /w0 tissues";
 
 		buff.delete(0, buff.length())
 			.append("(TI:").append(value).append(")");
@@ -248,6 +256,32 @@ public class ArticleSearcherTest extends TestCase {
 		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
 
 		System.out.printf("%s%n", value);
+		printQueryResult(result);
+	}
+
+
+	public void testQuery6() {
+		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
+
+		String value = "Absorption of zinc phosphide particles";
+
+		String query = value.replaceAll("[ :;,]+", " /w0 ");
+
+		StringBuilder buff = new StringBuilder();
+		buff.delete(0, buff.length())
+			.append("(TI:").append(query).append(")");
+
+
+		ArticleInputData inputData = new ArticleInputData();
+
+		inputData.setStartPosition(1);
+		inputData.setDisplayCount(100);
+		inputData.setQuery(query);
+		inputData.setTarget(Target.ARTI);
+
+
+		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+
 		printQueryResult(result);
 	}
 }
