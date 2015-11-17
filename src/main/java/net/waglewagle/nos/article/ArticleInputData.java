@@ -1,6 +1,8 @@
 package net.waglewagle.nos.article;
 
 import net.waglewagle.nos.InputData;
+import net.waglewagle.nos.ResponseGroup;
+import net.waglewagle.nos.ReturnType;
 
 /**
  * <p>NDSL 논문 검색 요청 정보를 담고 있는 클래스.</p>
@@ -10,7 +12,7 @@ import net.waglewagle.nos.InputData;
  */
 public class ArticleInputData extends InputData {
 	/** 검색대상 필드. */
-	private SearchField searchField;
+	private ArticleSearchField searchField;
 
 	/** 검색결과 출력 범위. */
 	private ResponseGroup responseGroup;
@@ -19,16 +21,16 @@ public class ArticleInputData extends InputData {
 	private ReturnType returnType;
 
 	/** 검색대상 콘텐츠. */
-	private Target target;
+	private ArticleDatabaseType target;
 
 	/** 정렬항목: 기본값 정확도. */
-	private SortBy sortBy;
+	private ArticleSortBy sortBy;
 
 
 	/**
 	 * @return the searchField
 	 */
-	public SearchField getSearchField() {
+	public ArticleSearchField getSearchField() {
 		return searchField;
 	}
 
@@ -36,14 +38,14 @@ public class ArticleInputData extends InputData {
 	 * @param searchField the searchField to set
 	 */
 	public void setSearchField(String searchField) {
-		this.searchField = SearchField.valueOf(searchField);
+		this.searchField = ArticleSearchField.valueOf(searchField);
 	}
 
 
 	/**
 	 * @param searchField the searchField to set
 	 */
-	public void setSearchField(SearchField searchField) {
+	public void setSearchField(ArticleSearchField searchField) {
 		this.searchField = searchField;
 	}
 
@@ -93,14 +95,14 @@ public class ArticleInputData extends InputData {
 	/**
 	 * @return the target
 	 */
-	public Target getTarget() {
+	public ArticleDatabaseType getTarget() {
 		return target;
 	}
 
 	/**
 	 * @param target the target to set
 	 */
-	public void setTarget(Target target) {
+	public void setTarget(ArticleDatabaseType target) {
 		this.target = target;
 	}
 
@@ -108,13 +110,13 @@ public class ArticleInputData extends InputData {
 	 * @param target the target to set
 	 */
 	public void setTarget(String target) {
-		this.target = Target.valueOf(target);
+		this.target = ArticleDatabaseType.valueOf(target);
 	}
 
 	/**
 	 * @return the sortBy
 	 */
-	public SortBy getSortBy() {
+	public ArticleSortBy getSortBy() {
 		return sortBy;
 	}
 
@@ -122,7 +124,7 @@ public class ArticleInputData extends InputData {
 	/**
 	 * @param sortBy the sortBy to set
 	 */
-	public void setSortBy(SortBy sortBy) {
+	public void setSortBy(ArticleSortBy sortBy) {
 		this.sortBy = sortBy;
 	}
 
@@ -131,7 +133,7 @@ public class ArticleInputData extends InputData {
 	 * @param sortBy the sortBy to set
 	 */
 	public void setSortBy(String sortBy) {
-		this.sortBy = SortBy.find(sortBy);
+		this.sortBy = ArticleSortBy.find(sortBy);
 	}
 
 }

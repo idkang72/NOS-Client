@@ -10,6 +10,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 
 import junit.framework.TestCase;
+import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.QueryResult;
 
 public class ArticleSearchResultXmlHandlerTest extends TestCase {
@@ -25,11 +26,11 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
+			QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 
-			for (NdslArticle article : handler.getQueryResult()) {
+			for (INdslArticle article : handler.getQueryResult()) {
 				System.out.printf("%s%n    in %s%n", article.getTitle(), article.getJournal().getTitle());
 			}
 
@@ -67,7 +68,7 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
+			QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 

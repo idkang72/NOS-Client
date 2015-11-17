@@ -1,12 +1,12 @@
 package net.waglewagle.nos.article;
 
 /**
- * 검색대상 콘텐츠
+ * <p>논문 검색대상 콘텐츠</p>
  *
  * @author 강신원
  * @since 2015. 10. 15
  */
-public enum Target {
+public enum ArticleDatabaseType {
 	ARTI("논문전체"),
 	NART("국내학위논문만 제외"),
 	JAKO("국내학술지"),
@@ -18,7 +18,7 @@ public enum Target {
 	/** 명칭. */
 	private final String title;
 
-	private Target(String title) {
+	private ArticleDatabaseType(String title) {
 		this.title = title;
 	}
 

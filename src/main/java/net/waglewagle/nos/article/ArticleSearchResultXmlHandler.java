@@ -105,7 +105,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 				this.recordType = RecordType.ARTICLE;
 				this.article = new NdslArticle();
 
-				this.article.setDbCode(this.dbCode);
+				this.article.setDatabaseCode(this.dbCode);
 				this.article.setKistiID(attributes.getValue(uri, "kistiID"));
 			}
 			else if ( "dissertation".equals(qName) ) {
@@ -113,7 +113,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 
 				this.dissertation = new NdslDissertation();
 
-				this.dissertation.setDbCode (this.dbCode );
+				this.dissertation.setDatabaseCode (this.dbCode );
 				this.dissertation.setKistiID(this.kistiID);
 			}
 		}

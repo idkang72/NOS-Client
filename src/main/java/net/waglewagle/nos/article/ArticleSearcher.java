@@ -1,11 +1,9 @@
-/**
- *
- */
 package net.waglewagle.nos.article;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.QueryResult;
 import net.waglewagle.nos.Searcher;
 
@@ -16,7 +14,7 @@ import net.waglewagle.nos.Searcher;
  * @since 2015. 10. 20.
  */
 public class ArticleSearcher
-extends Searcher<ArticleInputData, NdslArticle> implements ArticleSearch {
+extends Searcher<ArticleInputData, INdslArticle> implements ArticleSearch {
 	private final static int DEF_MAX_COUNT = 10;
 
 	/**
@@ -30,32 +28,32 @@ extends Searcher<ArticleInputData, NdslArticle> implements ArticleSearch {
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> query(String query) {
+	public QueryResult<ArticleInputData, INdslArticle> query(String query) {
 		return query(query, 1);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> query(String query, int page) {
+	public QueryResult<ArticleInputData, INdslArticle> query(String query, int page) {
 		return query(query, page, DEF_MAX_COUNT);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> query(String query, int page, int pageSize) {
+	public QueryResult<ArticleInputData, INdslArticle> query(String query, int page, int pageSize) {
 		return queryAll(query, (page - 1) * pageSize + 1);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> queryAll(String query, int startPosition) {
+	public QueryResult<ArticleInputData, INdslArticle> queryAll(String query, int startPosition) {
 		return queryAll(query, startPosition, DEF_MAX_COUNT);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> queryAll(String query, int startPosition, int maxCount) {
-		return queryAll(query, Target.ARTI, startPosition, maxCount);
+	public QueryResult<ArticleInputData, INdslArticle> queryAll(String query, int startPosition, int maxCount) {
+		return queryAll(query, ArticleDatabaseType.ARTI, startPosition, maxCount);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> queryAll(String query, Target target, int startPosition, int maxCount) {
+	public QueryResult<ArticleInputData, INdslArticle> queryAll(String query, ArticleDatabaseType target, int startPosition, int maxCount) {
 		ArticleInputData inputData = new ArticleInputData();
 
 		inputData.setQuery(query);
@@ -63,13 +61,13 @@ extends Searcher<ArticleInputData, NdslArticle> implements ArticleSearch {
 		inputData.setDisplayCount(maxCount);
 		inputData.setTarget(target);
 
-		inputData.setSearchField(SearchField.BI);
+		inputData.setSearchField(ArticleSearchField.BI);
 
 		return query(inputData);
 	}
 
 
-	public QueryResult<ArticleInputData, NdslArticle> query(ArticleInputData inputData) {
+	public QueryResult<ArticleInputData, INdslArticle> query(ArticleInputData inputData) {
 		Map<String, String> param = new HashMap<String, String>();
 
 		param.put("displayCount" , String.valueOf(inputData.getDisplayCount ()));

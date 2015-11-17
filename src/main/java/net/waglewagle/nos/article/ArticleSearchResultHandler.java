@@ -9,6 +9,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
 
+import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.NosException;
 import net.waglewagle.nos.QueryResult;
 import net.waglewagle.nos.http.BaseResponseHandler;
@@ -19,8 +20,8 @@ import net.waglewagle.nos.http.BaseResponseHandler;
  * @author 강신원
  * @since 2015. 10. 20
  */
-public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<ArticleInputData, NdslArticle>> {
-	public QueryResult<ArticleInputData, NdslArticle> handle(InputStream is, String encoding) throws IOException {
+public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<ArticleInputData, INdslArticle>> {
+	public QueryResult<ArticleInputData, INdslArticle> handle(InputStream is, String encoding) throws IOException {
 		ArticleSearchResultXmlHandler handler = new ArticleSearchResultXmlHandler();
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -39,7 +40,7 @@ public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<
 		}
 
 
-		QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
+		QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
 		System.out.println("Count: " + result.getCount());
 

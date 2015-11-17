@@ -1,6 +1,7 @@
 package net.waglewagle.nos.article;
 
 import junit.framework.TestCase;
+import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.QueryResult;
 
 public class ArticleSearcherTest extends TestCase {
@@ -10,18 +11,18 @@ public class ArticleSearcherTest extends TestCase {
 	public void testQuery() {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.query("김치 재료 숙성");
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query("김치 재료 숙성");
 
 		printQueryResult(result);
 	}
 
-	private void printQueryResult(QueryResult<ArticleInputData, NdslArticle> result) {
+	private void printQueryResult(QueryResult<ArticleInputData, INdslArticle> result) {
 
 		System.out.printf("총검색건수: %d%n", result.getTotalCount());
 		System.out.printf("검색어  : %s%n", result.getInputData().getQuery());
 		System.out.printf("검색대상: %s%n", result.getInputData().getTarget());
-		for (NdslArticle article : result) {
-			System.out.printf("%20s: %s %s%n", article.getCN(), article.getDbCode(), article.getTitle());
+		for (INdslArticle article : result) {
+			System.out.printf("%20s: %s %s%n", article.getCN(), article.getDatabaseCode(), article.getTitle());
 			//System.out.printf("%20s  %s%n", "", article.getLinkForDesktop());
 		}
 	}
@@ -29,7 +30,7 @@ public class ArticleSearcherTest extends TestCase {
 	public void testQuery2() {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.queryAll("LED", Target.DIKO, 1, 101);
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.queryAll("LED", ArticleDatabaseType.DIKO, 1, 101);
 
 		printQueryResult(result);
 	}
@@ -106,10 +107,10 @@ public class ArticleSearcherTest extends TestCase {
 			inputData.setStartPosition(1);
 			inputData.setDisplayCount(5);
 			inputData.setQuery(query);
-			inputData.setTarget(Target.ARTI);
+			inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-			QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+			QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 			System.out.printf("%s: %s%n", ktsn, scfcNm, query);
 			printQueryResult(result);
@@ -211,10 +212,10 @@ public class ArticleSearcherTest extends TestCase {
 			inputData.setStartPosition(1);
 			inputData.setDisplayCount(5);
 			inputData.setQuery(query);
-			inputData.setTarget(Target.ARTI);
+			inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-			QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+			QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 			if ( result.getTotalCount() <= 0 ) continue;
 
@@ -250,10 +251,10 @@ public class ArticleSearcherTest extends TestCase {
 		inputData.setStartPosition(1);
 		inputData.setDisplayCount(100);
 		inputData.setQuery(query);
-		inputData.setTarget(Target.ARTI);
+		inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 		System.out.printf("%s%n", value);
 		printQueryResult(result);
@@ -277,10 +278,10 @@ public class ArticleSearcherTest extends TestCase {
 		inputData.setStartPosition(1);
 		inputData.setDisplayCount(100);
 		inputData.setQuery(query);
-		inputData.setTarget(Target.ARTI);
+		inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 		printQueryResult(result);
 	}
