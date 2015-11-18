@@ -36,7 +36,7 @@ public class SimpleHttpRequest {
 
 		StringBuilder buff = new StringBuilder(baseUrl);
 
-		if ( buff.indexOf("?") == -1 ) {
+		if ( buff.indexOf("?") < 0 ) {
 			buff.append("?");
 		}
 		else {
@@ -59,7 +59,6 @@ public class SimpleHttpRequest {
 		buff = null;
 
 		log.log(Level.FINEST, "URL: {0}", url);
-
 
 		return url;
 	}

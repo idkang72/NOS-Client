@@ -19,7 +19,7 @@ import net.waglewagle.nos.util.ValueUtil;
 class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 	private final static Logger log = Logger.getLogger(ArticleSearchResultXmlHandler.class.getName());
 
-	private static enum RecordType { ARTICLE, JOURNAL, DISSERTATION };
+	private static enum RecordType { RECORD, ARTICLE, JOURNAL, DISSERTATION };
 
 	private ThreadLocal<ArticleQueryResult> threadLocal;
 
@@ -97,8 +97,17 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 		}
 		/* record 태그. */
 		else if ( "record".equals(qName) ) { // record
+			this.recordType = RecordType.RECORD;
+			this.article = new NdslArticle();
+
 			this.dbCode  = attributes.getValue(uri, "dbCode");
 			this.kistiID = attributes.getValue(uri, "kistiID");
+			if ( this.kistiID == null || "".equals(this.kistiID) ) {
+				this.kistiID = attributes.getValue(uri, "cn");
+			}
+
+			this.article.setDatabaseCode(this.dbCode);
+			this.article.setKistiID(this.kistiID);
 		}
 		else if ( "journalInfo".equals(qName) ) {
 			this.recordType = RecordType.JOURNAL;
@@ -111,10 +120,6 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 		}
 		else if ( "articleInfo".equals(qName) ) {
 			this.recordType = RecordType.ARTICLE;
-			this.article = new NdslArticle();
-
-			this.article.setDatabaseCode(this.dbCode);
-			this.article.setKistiID(attributes.getValue(uri, "kistiID"));
 		}
 		else if ( "dissertation".equals(qName) ) {
 			this.recordType = RecordType.DISSERTATION;
@@ -146,16 +151,21 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 		if ( "inputData".equals(qName) ) {
 			queryResult.setInputData(this.inputData);
 		}
-		else if ( "articleInfo".equals(qName) ) {
-			this.article.setJournal(this.journal);
-			queryResult.add(this.article);
+		else if ( "record".equals(qName) ) {
+			if ( this.recordType == RecordType.RECORD ) {
+				queryResult.add(this.article);
+			}
+			else if ( this.recordType == RecordType.ARTICLE ) {
+				this.article.setJournal(this.journal);
+				queryResult.add(this.article);
+			}
+			else if ( this.recordType == RecordType.DISSERTATION ) {
+				this.dissertation.setJournal(this.journal);
+				queryResult.add(this.dissertation);
+			}
 
 			this.article = null;
 			this.journal = null;
-		}
-		else if ( "dissertation".equals(qName) ) {
-			queryResult.add(this.dissertation);
-
 			this.dissertation = null;
 		}
 

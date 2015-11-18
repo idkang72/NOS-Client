@@ -311,4 +311,30 @@ public class ArticleSearcherTest extends TestCase {
 
 		printQueryResult(result);
 	}
+
+
+	public void testQuery7() {
+		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl + "?op=onlycn");
+
+		String value = "Solar sail";
+
+		String query = value.replaceAll("[ :;,]+", " /w0 ");
+
+		StringBuilder buff = new StringBuilder();
+		buff.delete(0, buff.length())
+			.append("(TI:").append(query).append(")");
+
+
+		ArticleInputData inputData = new ArticleInputData();
+
+		inputData.setStartPosition(1);
+		inputData.setDisplayCount(100);
+		inputData.setQuery(query);
+		inputData.setTarget(ArticleDatabaseType.ARTI);
+
+
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
+
+		printQueryResult(result);
+	}
 }
