@@ -28,6 +28,9 @@ public class NdslJournal extends NdslRecord implements INdslJournal  {
 	/** 권. */
 	private String volume;
 
+	/** 권호 제어번호. */
+	private String volumeSeqNo;
+
 	/** 호. */
 	private String issue;
 
@@ -150,6 +153,25 @@ public class NdslJournal extends NdslRecord implements INdslJournal  {
 		this.isbnList.add(isbn);
 	}
 
+
+	/**
+	 * 권호제어번호 정보를 얻는다.
+	 *
+	 * @return 권호제어번호 정보.
+	 */
+	public String getVolumeSeqNo() {
+		return volumeSeqNo;
+	}
+
+
+	/**
+	 * 권호제어번호 정보를 설정한다.
+	 *
+	 * @param volumeSeqNo 설정할 권호제어번호 정보.
+	 */
+	public void setVolumeSeqNo(String volumeSeqNo) {
+		this.volumeSeqNo = volumeSeqNo;
+	}
 
 	/**
 	 * 권 정보를 얻는다.

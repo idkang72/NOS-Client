@@ -20,7 +20,7 @@
 	<property name="project.id"     value="nos-client" />
 
 	<property name="build.name"    value="nos-client" />
-	<property name="build.version" value="0.2" />
+	<property name="build.version" value="0.2.1" />
 
 	<property name="prod.src.dir"   value="${basedir}/src/main/java" />
 	<property name="test.src.dir"   value="${basedir}/src/test/java" />

@@ -2,6 +2,8 @@ package net.waglewagle.nos.article;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -21,6 +23,8 @@ import net.waglewagle.nos.http.BaseResponseHandler;
  * @since 2015. 10. 20
  */
 public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<ArticleInputData, INdslArticle>> {
+	private final static Logger log = Logger.getLogger(ArticleSearchResultHandler.class.getName());
+
 	public QueryResult<ArticleInputData, INdslArticle> handle(InputStream is, String encoding) throws IOException {
 		ArticleSearchResultXmlHandler handler = new ArticleSearchResultXmlHandler();
 
@@ -42,7 +46,7 @@ public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<
 
 		QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
-		System.out.println("Count: " + result.getCount());
+		log.log(Level.FINEST, "Count: {0}", result.getCount());
 
 		return handler.getQueryResult();
 	}

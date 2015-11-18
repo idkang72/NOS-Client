@@ -230,34 +230,60 @@ public class ArticleSearcherTest extends TestCase {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
 
 		StringBuilder buff = new StringBuilder();
-		String name  = "Solar Sail Trajectory Design for Transferring Heliocentric Fixed Displaced Orbit";
+		//String name  = "Solar Sail Trajectory Design for Transferring Heliocentric Fixed Displaced Orbit";
 		//String value = "Solar /w0 (Sail /w1 Design)";
 		//String value = "(Ulmus /w0 davidiana) & japonica";
 		//String value = "김치 /n0 (발효 /n2 효과)";
 		//String value = "Helicobacter /w0 (pylori /w0 urease)";
-		String value = "Metabolism /w0 of /w0 alpha-tocopherol /w0 and /w0 the /w0 isolation /w0 of /w0 a /w0 nontocopherol-reducing /w0 substance /w0 from /w0 animal /w0 tissues";
+		//String value = "Metabolism /w0 of /w0 alpha-tocopherol /w0 and /w0 the /w0 isolation /w0 of /w0 a /w0 nontocopherol-reducing /w0 substance /w0 from /w0 animal /w0 tissues";
 
-		buff.delete(0, buff.length())
-			.append("(TI:").append(value).append(")");
-			//.append("OR (AB:").append(value).append(")");
+		String [] values = {
+				//"Solar /n0 Sail /n1 Design",
+				//"Solar /w0 Sail /w1 Design",
+				//"(Solar /w0 Sail) /w1 Design",
+				//"Solar /w0 (Sail /w1 Design)"
+				//"Solar & Sail & Design & Development",
+				//"Solar /w0 Sail /w1 Design /w1 Development",
+				//"(Solar /w0 Sail) /w1 Design /w1 Development",
+				//"Solar /w0 (Sail /w1 Design) /w1 Development",
+				//"Solar /w0 Sail /w1 (Design /w1 Development)",
+				//"(Solar /w0 Sail) /w1 (Design /w1 Development)",
+				//"Solar /w0 (Sail /w1 Design /w1 Development)",
+				//"Solar /w0 ((Sail /w1 Design) /w1 Development)",
+				//"Solar /w0 (Sail /w1 (Design /w1 Development))"
+				//"Plasmodium malariae",
+				//"Plasmodium & malariae",
+				//"Plasmodium /w0 malariae",
+				//"Plasmodium /n0 malariae",
+				"Epinephelus awoara",
+				"Epinephelus & awoara",
+				"Epinephelus /n0 awoara",
+				"Epinephelus /w0 awoara"
+		};
 
-		String query = buff.toString();
+		for (String value : values) {
+			buff.delete(0, buff.length())
+				.append("(TI:").append(value).append(")");
+				//.append(" | (AB:").append(value).append(")");
+
+			String query = buff.toString();
 
 
-		System.out.println(query);
+			System.out.println(query);
 
-		ArticleInputData inputData = new ArticleInputData();
+			ArticleInputData inputData = new ArticleInputData();
 
-		inputData.setStartPosition(1);
-		inputData.setDisplayCount(100);
-		inputData.setQuery(query);
-		inputData.setTarget(ArticleDatabaseType.ARTI);
+			inputData.setStartPosition(1);
+			inputData.setDisplayCount(100);
+			inputData.setQuery(query);
+			inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
+			QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
-		System.out.printf("%s%n", value);
-		printQueryResult(result);
+			System.out.printf("%s%n", value);
+			printQueryResult(result);
+		}
 	}
 
 

@@ -21,6 +21,14 @@ Java Client Library for KiSTi NDSL NOS Open API(http://nos.ndsl.kr/)
   - 쓸 사람이 있을래나? ^^;
   - 아시죠? 문제 있으면 알아서.
 
+## ver. 0.2.1
+
+* 논문 검색 결과 XML에서 record/journalInfo/volume[seqno] 값을 설정할 수 있도록
+  NdslJournal 클래스에 volumeSeqNo 및 getter/setter 추가
+  - 이에 맞추어 INdslJournal 인터페이스에 getVolumeSeqNo() 추가
+* 로그를 위해서 System.out.println으로 출력하던 부분을 java.util.logging 을
+  이용하는 것으로 수정
+
 ## ver. 0.2
 
 * 저널(Journal), 논문(Article), 저자(Author), 학위논문(Dissertation)을 담는

@@ -46,6 +46,14 @@ public interface INdslJournal extends INdslRecord {
 	public String getVolume();
 
 	/**
+	 * 권호제어번호 정보를 얻는다.
+	 *
+	 * @return 권호제어번호 정보.
+	 */
+	public String getVolumeSeqNo();
+
+
+	/**
 	 * 호 정보를 얻는다.
 	 *
 	 * @return 호 정보.
