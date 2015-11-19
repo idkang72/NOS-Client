@@ -250,4 +250,66 @@ public class ArticleSearcherTest extends TestCase {
 		System.out.printf("%s%n", value);
 		printQueryResult(result);
 	}
+
+
+	public void testQuery7() {
+		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
+
+		StringBuilder buff = new StringBuilder();
+
+		String value = "LATE PARTIAL ECLIPSE";
+
+		value = value.replaceAll("[ ,;:.]+", " /w0 ");
+
+		buff.delete(0, buff.length())
+			.append("(TI:").append(value).append(")");
+		//.append("OR (AB:").append(value).append(")");
+
+		String query = buff.toString();
+
+
+		ArticleInputData inputData = new ArticleInputData();
+
+		inputData.setStartPosition(1);
+		inputData.setDisplayCount(100);
+		inputData.setQuery(query);
+		inputData.setTarget(Target.ARTI);
+
+
+		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+
+		System.out.printf("%s%n", value);
+		printQueryResult(result);
+	}
+
+
+	public void testQuery8() {
+		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl + "?op=onlycn");
+
+		StringBuilder buff = new StringBuilder();
+
+		String value = "Aspergillus niger";
+
+		value = value.replaceAll("[ ,;:.]+", " /w0 ");
+
+		buff.delete(0, buff.length())
+			.append("(TI:").append(value).append(")")
+			.append("OR (AB:").append(value).append(")");
+
+		String query = buff.toString();
+
+
+		ArticleInputData inputData = new ArticleInputData();
+
+		inputData.setStartPosition(1);
+		inputData.setDisplayCount(100);
+		inputData.setQuery(query);
+		inputData.setTarget(Target.ARTI);
+
+
+		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+
+		System.out.printf("%s%n", value);
+		printQueryResult(result);
+	}
 }

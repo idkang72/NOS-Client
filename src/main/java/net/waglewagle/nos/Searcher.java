@@ -28,7 +28,12 @@ public abstract class Searcher<I extends InputData, E> {
 	public Searcher(String keyValue, String apiUrl) {
 		this.keyValue = keyValue;
 		this.apiUrl   = apiUrl;
-		this.httpRequest = new SimpleHttpRequest(apiUrl + "?keyValue=" + keyValue);
+
+		String baseUrl = apiUrl
+					+ (apiUrl.indexOf('?') > -1 ? "&keyValue=" : "?keyValue=")
+					+ keyValue;
+
+		this.httpRequest = new SimpleHttpRequest(baseUrl);
 	}
 
 	/**
