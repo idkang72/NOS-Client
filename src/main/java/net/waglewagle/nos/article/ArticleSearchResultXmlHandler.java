@@ -152,10 +152,7 @@ class ArticleSearchResultXmlHandler extends XmlResultBaseHandler {
 			queryResult.setInputData(this.inputData);
 		}
 		else if ( "record".equals(qName) ) {
-			if ( this.recordType == RecordType.RECORD ) {
-				queryResult.add(this.article);
-			}
-			else if ( this.recordType == RecordType.ARTICLE ) {
+			if ( this.recordType == RecordType.RECORD || this.recordType == RecordType.ARTICLE ) {
 				this.article.setJournal(this.journal);
 				queryResult.add(this.article);
 			}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData>
+	<resultSummary>
+		<totalCount>1</totalCount>
+		<processingTime>0.111</processingTime>
+		<token>311775954921607100463964958458405994989</token>
+	</resultSummary>
+	<inputData>
+		<keyvalue>08702579</keyvalue>
+		<startposition>1</startposition>
+		<query>&lt;![CDATA[(CN:JAKO199011920011396)]]&gt;</query>
+		<target>ARTI</target>
+		<displaycount>100</displaycount>
+	</inputData>
+	<outputData>
+		<record dbCode="JAKO" kistiID="JAKO199011920011396" number="1"
+			rank="">
+			<journalInfo kistiID="NJOU00036329">
+				<publisher>한국미생물생명공학회</publisher>
+				<journalTitleInfo>
+					<journalTitle><![CDATA[산업미생물학회지 = Korean journal of applied microbiology and biotechnology]]></journalTitle>
+				</journalTitleInfo>
+				<issninfo>
+					<issn>0257-2389</issn>
+					<issn />
+				</issninfo>
+				<isbninfo>
+					<isbn />
+				</isbninfo>
+				<volume seqno="254">18</volume>
+				<issue>5</issue>
+				<year>1990</year>
+			</journalInfo>
+			<articleInfo kistiID="JAKO199011920011396">
+				<articleTitleInfo>
+					<articleTitle><![CDATA[계분을 이용하기 위한 Thermoactinomyces sp. 균처리]]></articleTitle>
+				</articleTitleInfo>
+				<abstractInfo>
+					<abstract><![CDATA[방선균의 한 종인 Thermoactinomuces sp. CH-53이 퇴비에서 분리되었다. 분리된 이 균은 pH 6.5-9.5, 수분 55-65]]>&#29;<![CDATA[의 무살균계분에서 왕성히 성장하며, 밀기울 배지에 포자를 충분히 착생시켜 시판의 배합사료에 1]]>&#29;<![CDATA[ 비율로 첨가하여 닭에 급여해서 방선균의 생균수가  $10^7-10^8$  . cell/g에 도달하는 계분을 얻었으며, 처리 동안 악취성분이 소실되었다. 처리된 계분의 비료효과실험은 pot에서 Brassica rapa var. perviridis의 생육조사에서 다량시용에도 생육저해가 없었으며 질소함량으로 pot당 0.4g에 해당하는 시용구에서 최대생산을 보였다.]]></abstract>
+				</abstractInfo>
+				<authorInfo>
+					<author number="1">최무영</author>
+					<author number="2">이은</author>
+				</authorInfo>
+				<page>pp.530-534</page>
+				<deeplink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=08702579&amp;target=NART&amp;cn=JAKO199011920011396</deeplink>
+				<mobilelink>http://click.ndsl.kr/servlet/OpenAPIDetailView?keyValue=08702579&amp;target=NART&amp;cn=JAKO199011920011396&amp;type=mobile</mobilelink>
+				<sciencesub>BB0300</sciencesub>
+				<keyword>Actinomycete-feed . Treatment . Fertilizer</keyword>
+			</articleInfo>
+		</record>
+	</outputData>
+</MetaData>

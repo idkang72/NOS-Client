@@ -299,4 +299,15 @@ public class NdslJournal extends NdslRecord implements INdslJournal  {
 	public void setHasPaper(boolean hasPaper) {
 		this.hasPaper = hasPaper;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "NdslJournal [publisher=" + publisher + ", title=" + title + ", issnList=" + issnList + ", isbnList="
+				+ isbnList + ", volume=" + volume + ", volumeSeqNo=" + volumeSeqNo + ", issue=" + issue + ", year="
+				+ year + ", contentUrl=" + contentUrl + ", hasContent=" + hasContent + ", hasAbstract=" + hasAbstract
+				+ ", hasPaper=" + hasPaper + "]";
+	}
 }

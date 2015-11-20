@@ -2,6 +2,7 @@ package net.waglewagle.nos.article;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -9,12 +10,14 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.NosException;
 import net.waglewagle.nos.QueryResult;
 import net.waglewagle.nos.http.BaseResponseHandler;
+import net.waglewagle.nos.xml.StripInvalidCharacterReferenceReader;
 
 /**
  * <p>논문 검색 결과 처리 핸들러.</p>
@@ -30,11 +33,14 @@ public class ArticleSearchResultHandler extends BaseResponseHandler<QueryResult<
 
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 
-		SAXParser parser;
 		try {
-			parser = factory.newSAXParser();
+			StripInvalidCharacterReferenceReader reader = new StripInvalidCharacterReferenceReader(new InputStreamReader(is));
 
-			parser.parse(is, handler);
+			InputSource source = new InputSource(reader);
+
+			SAXParser parser = factory.newSAXParser();
+
+			parser.parse(source, handler);
 		}
 		catch (ParserConfigurationException e) {
 			throw new NosException(e);

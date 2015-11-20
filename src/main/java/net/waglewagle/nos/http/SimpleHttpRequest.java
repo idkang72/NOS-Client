@@ -58,7 +58,7 @@ public class SimpleHttpRequest {
 		buff.delete(0,  buff.length());
 		buff = null;
 
-		log.log(Level.FINEST, "URL: {0}", url);
+		log.log(Level.INFO, "URL: {0}", url);
 
 		return url;
 	}
