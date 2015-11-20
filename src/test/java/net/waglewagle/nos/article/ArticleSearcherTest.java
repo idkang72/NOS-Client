@@ -384,7 +384,7 @@ public class ArticleSearcherTest extends TestCase {
 	}
 
 
-	public void testQuery7() {
+	public void testQuery10() {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl);
 
 		StringBuilder buff = new StringBuilder();
@@ -405,17 +405,17 @@ public class ArticleSearcherTest extends TestCase {
 		inputData.setStartPosition(1);
 		inputData.setDisplayCount(100);
 		inputData.setQuery(query);
-		inputData.setTarget(Target.ARTI);
+		inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 		System.out.printf("%s%n", value);
 		printQueryResult(result);
 	}
 
 
-	public void testQuery8() {
+	public void testQuery11() {
 		ArticleSearcher searcher = new ArticleSearcher(keyValue, baseUrl + "?op=onlycn");
 
 		StringBuilder buff = new StringBuilder();
@@ -436,10 +436,10 @@ public class ArticleSearcherTest extends TestCase {
 		inputData.setStartPosition(1);
 		inputData.setDisplayCount(100);
 		inputData.setQuery(query);
-		inputData.setTarget(Target.ARTI);
+		inputData.setTarget(ArticleDatabaseType.ARTI);
 
 
-		QueryResult<ArticleInputData, NdslArticle> result = searcher.query(inputData);
+		QueryResult<ArticleInputData, INdslArticle> result = searcher.query(inputData);
 
 		System.out.printf("%s%n", value);
 		printQueryResult(result);

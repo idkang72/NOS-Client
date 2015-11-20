@@ -28,6 +28,8 @@ Java Client Library for KiSTi NDSL NOS Open API(http://nos.ndsl.kr/)
   - 이에 맞추어 INdslJournal 인터페이스에 getVolumeSeqNo() 추가
 * 로그를 위해서 System.out.println으로 출력하던 부분을 java.util.logging 을
   이용하는 것으로 수정
+* XML 내 문자 참조(Character Reference)중 유효하지 않은 값이 있는 경우 처리가 안된다.
+  - 몬가 조치를 했는데 버그가 있다. 댄장.
 
 ## ver. 0.2
 
