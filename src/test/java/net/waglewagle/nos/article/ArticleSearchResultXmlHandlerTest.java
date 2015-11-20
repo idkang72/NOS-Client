@@ -2,15 +2,19 @@ package net.waglewagle.nos.article;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import junit.framework.TestCase;
+import net.waglewagle.nos.INdslArticle;
 import net.waglewagle.nos.QueryResult;
+import net.waglewagle.nos.xml.StripInvalidCharacterReferenceReader;
 
 public class ArticleSearchResultXmlHandlerTest extends TestCase {
 	public void test1() {
@@ -25,11 +29,11 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
+			QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 
-			for (NdslArticle article : handler.getQueryResult()) {
+			for (INdslArticle article : handler.getQueryResult()) {
 				System.out.printf("%s%n    in %s%n", article.getTitle(), article.getJournal().getTitle());
 			}
 
@@ -67,7 +71,8 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 
 			parser.parse(is, handler);
 
-			QueryResult<ArticleInputData, NdslArticle> result = handler.getQueryResult();
+
+			QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
 
 			System.out.println("Count: " + result.getCount());
 
@@ -87,6 +92,35 @@ public class ArticleSearchResultXmlHandlerTest extends TestCase {
 		}
 		catch (Exception e) {
 			assertTrue(e.getMessage(), true);
+		}
+	}
+
+
+	public void testInvalidCharRefer() {
+		ArticleSearchResultXmlHandler handler = new ArticleSearchResultXmlHandler();
+
+		InputStream is = getClass().getResourceAsStream("/invalid-char-refer.xml");
+
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+
+		try {
+
+			StripInvalidCharacterReferenceReader reader = new StripInvalidCharacterReferenceReader(new InputStreamReader(is));
+
+			InputSource source = new InputSource(reader);
+
+			SAXParser parser = factory.newSAXParser();
+			parser.parse(source, handler);
+
+			QueryResult<ArticleInputData, INdslArticle> result = handler.getQueryResult();
+
+			System.out.println("Count: " + result.getCount());
+
+			assertTrue(true);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
 		}
 	}
 }

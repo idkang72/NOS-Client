@@ -7,8 +7,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SimpleHttpRequest {
+	private final static Logger log = Logger.getLogger(SimpleHttpRequest.class.getName());
+
 	private final static String DEF_CHARSET = "UTF-8";
 
 	private String baseUrl;
@@ -32,7 +36,7 @@ public class SimpleHttpRequest {
 
 		StringBuilder buff = new StringBuilder(baseUrl);
 
-		if ( buff.indexOf("?") == -1 ) {
+		if ( buff.indexOf("?") < 0 ) {
 			buff.append("?");
 		}
 		else {
@@ -54,7 +58,7 @@ public class SimpleHttpRequest {
 		buff.delete(0,  buff.length());
 		buff = null;
 
-		System.out.println("URL: " + url);
+		log.log(Level.INFO, "URL: {0}", url);
 
 		return url;
 	}

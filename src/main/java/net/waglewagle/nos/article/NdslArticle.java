@@ -3,6 +3,8 @@ package net.waglewagle.nos.article;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.waglewagle.nos.INdslArticle;
+import net.waglewagle.nos.INdslJournal;
 import net.waglewagle.nos.NdslRecord;
 
 /**
@@ -11,14 +13,14 @@ import net.waglewagle.nos.NdslRecord;
  * @author 강신원
  * @since 2015. 10. 19
  */
-public class NdslArticle extends NdslRecord {
-	/** 콘텐츠 유형: record[dbCode] */
-	private String dbCode;
+public class NdslArticle extends NdslRecord implements INdslArticle {
+	/** 콘텐츠 유형: record[databaseCode] */
+	private String databaseCode;
 
-	private Target target;
+	private ArticleDatabaseType databaseType;
 
 	/** 저널 객체. */
-	private NdslJournal journal;
+	private INdslJournal journal;
 
 	/** 제목: record/articleInfo/articleTitleInfo/articleTitle. */
 	private String title;
@@ -53,102 +55,147 @@ public class NdslArticle extends NdslRecord {
 	/** 주제어. record/articleInfo/keyword. */
 	private List<String> keywordList;
 
+
 	/**
-	 * @return the dbCode
+	 * <p>논문의 콘텐츠 유형 코드를 얻는다.</p>
 	 */
-	public String getDbCode() {
-		return dbCode;
+	public String getDatabaseCode() {
+		return databaseCode;
 	}
 
 	/**
-	 * @param dbCode the dbCode to set
+	 * <p>논문의 콘텐츠 유형 코드를 설정한다.</p>
+	 *
+	 * @param databaseCode 설정할 콘텐츠 유형 코드.
 	 */
-	public void setDbCode(String dbCode) {
-		this.dbCode = dbCode;
-	}
+	public void setDatabaseCode(String dbCode) {
+		this.databaseCode = dbCode;
 
-	/**
-	 * @return the target
-	 */
-	public Target getTarget() {
-		return target;
-	}
-
-	/**
-	 * @param target the target to set
-	 */
-	public void setTarget(Target target) {
-		this.target = target;
+		if ( dbCode == null ) {
+			this.databaseType = null;
+		}
+		else {
+			this.databaseType = ArticleDatabaseType.valueOf(dbCode);
+		}
 	}
 
 
 	/**
-	 * @return the journal
+	 * <p>논문의 콘텐츠 유형을 얻는다.</p>
 	 */
-	public NdslJournal getJournal() {
+	public ArticleDatabaseType getDatabaseType() {
+		return databaseType;
+	}
+
+
+	/**
+	 * <p>논문의 콘텐츠 유형을 설정한다.</p>
+	 *
+	 * @param databaseType the databaseType to set
+	 */
+	public void setDatabaseType(ArticleDatabaseType dbType) {
+		this.databaseType = dbType;
+
+		if ( dbType == null ) {
+			this.databaseCode = null;
+		}
+		else {
+			this.databaseCode = dbType.name();
+		}
+	}
+
+
+	/**
+	 * <p>저널 정보를 얻는다.</p>
+	 *
+	 * @return 저널 정보.
+	 */
+	public INdslJournal getJournal() {
 		return journal;
 	}
 
 	/**
-	 * @param journal the journal to set
+	 * <p>저널 정보를 설정한다.</p>
+	 *
+	 * @param journal 설정할 저널 정보.
 	 */
-	public void setJournal(NdslJournal journal) {
+	public void setJournal(INdslJournal journal) {
 		this.journal = journal;
 	}
 
+
 	/**
-	 * @return the title
+	 * 논문 제목을 얻는다.
+	 *
+	 * @return 논문 제목.
 	 */
 	public String getTitle() {
 		return title;
 	}
 
 	/**
-	 * @param title the title to set
+	 * 논문 제목을 설정한다.
+	 *
+	 * @param title 설정할 논문 제목.
 	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+
 	/**
-	 * @return the abs
+	 * 초록을 얻는다.
+	 *
+	 * @return 초록.
 	 */
 	public String getAbstract() {
 		return abs;
 	}
 
 	/**
-	 * @param abs the abs to set
+	 * 초록을 설정한다.
+	 *
+	 * @param abs 설정할 초록.
 	 */
 	public void setAbstract(String abs) {
 		this.abs = abs;
 	}
 
 	/**
-	 * @return the authorList
+	 * 저자 목록을 얻는다.
+	 *
+	 * @return 저자 목록.
 	 */
 	public List<NdslAuthor> getAuthorList() {
 		return authorList;
 	}
 
 	/**
-	 * @param authorList the authorList to set
+	 * 저자 목록을 설정한다.
+	 *
+	 * @param authorList 설정할 저자 목록.
 	 */
 	public void setAuthorList(List<NdslAuthor> authorList) {
 		this.authorList = authorList;
 	}
 
-	public void addAuthor(String author) {
-		if ( author == null || "".equals(author.trim())) return;
+	/**
+	 * 저자 목록에 저자를 추가한다.
+	 *
+	 * @param authorName 추가할 저자명.
+	 */
+	public void addAuthor(String authorName) {
+		if ( authorName == null || "".equals(authorName.trim())) return;
 
-		if ( this.authorList == null ) {
-			this.authorList = new ArrayList<NdslAuthor>();
-		}
-
-		this.authorList.add(new NdslAuthor(author));
+		addAuthor(new NdslAuthor(authorName));
 	}
 
 
+	/**
+	 * 저자 목록에 저자를 추가한다.
+	 *
+	 * @param author 추가할 저자 정보.
+	 */
 	public void addAuthor(NdslAuthor author) {
 		if ( this.authorList == null ) {
 			this.authorList = new ArrayList<NdslAuthor>();
@@ -159,117 +206,156 @@ public class NdslArticle extends NdslRecord {
 
 
 	/**
-	 * @return the contentUrl
+	 * 원문접근 URL을 얻는다.
+	 *
+	 * @return 원문접근 URL.
 	 */
 	public String getContentUrl() {
 		return contentUrl;
 	}
 
 	/**
-	 * @param contentUrl the contentUrl to set
+	 * 원문접근 URL을 설정한다.
+	 *
+	 * @param contentUrl 설정할 원문접근 URL.
 	 */
 	public void setContentUrl(String contentUrl) {
 		this.contentUrl = contentUrl;
 	}
 
 	/**
-	 * @return the hasContent
+	 * 원문 유무를 얻는다.
+	 *
+	 * @return 원문 유무.
 	 */
-	public boolean isHasContent() {
+	public boolean hasContent() {
 		return hasContent;
 	}
 
 	/**
-	 * @param hasContent the hasContent to set
+	 * 원문 유무를 설정한다.
+	 *
+	 * @param hasContent 설정할 원문 유무.
 	 */
 	public void setHasContent(boolean hasContent) {
 		this.hasContent = hasContent;
 	}
 
 	/**
-	 * @return the hasAbstract
+	 * 초록 유무를 얻는다.
+	 *
+	 * @return 초록 유무.
 	 */
-	public boolean isHasAbstract() {
+	public boolean hasAbstract() {
 		return hasAbstract;
 	}
 
 	/**
-	 * @param hasAbstract the hasAbstract to set
+	 * 초록 유무를 설정한다.
+	 *
+	 * @param hasAbstract 설정할 초록 유무.
 	 */
 	public void setHasAbstract(boolean hasAbstract) {
 		this.hasAbstract = hasAbstract;
 	}
 
 	/**
-	 * @return the hasPaper
+	 * 원문 소장 여부를 얻는다.
+	 *
+	 * @return 원문 소장 여부.
 	 */
-	public boolean isHasPaper() {
+	public boolean hasPaper() {
 		return hasPaper;
 	}
 
 	/**
-	 * @param hasPaper the hasPaper to set
+	 * 원문 소장 여부를 설정한다.
+	 *
+	 * @param hasPaper 설정할 원문 소장 여부.
 	 */
 	public void setHasPaper(boolean hasPaper) {
 		this.hasPaper = hasPaper;
 	}
 
 	/**
-	 * @return the page
+	 * 저널 내 수록 페이지 정보를 얻는다.
+	 *
+	 * @return 저널 내 수록 페이지 정보.
 	 */
 	public String getPage() {
 		return page;
 	}
 
 	/**
-	 * @param page the page to set
+	 * 저널 내 수록 페이지 정보를 설정한다.
+	 *
+	 * @param page 설정할 저널 내 수록 페이지 정보.
 	 */
 	public void setPage(String page) {
 		this.page = page;
 	}
 
 	/**
-	 * @return the linkForDesktop
+	 * PC용 상세보기 URL을 얻는다.
+	 *
+	 * @return PC용 상세보기 URL.
 	 */
 	public String getLinkForDesktop() {
 		return linkForDesktop;
 	}
 
 	/**
-	 * @param linkForDesktop the linkForDesktop to set
+	 * PC용 상세보기 URL을 설정한다.
+	 *
+	 * @param linkForDesktop 설정할 PC용 상세보기 URL.
 	 */
 	public void setLinkForDesktop(String linkForDesktop) {
 		this.linkForDesktop = linkForDesktop;
 	}
 
 	/**
-	 * @return the linkForMobile
+	 * 모바일기기용 상세보기 URL을 얻는다.
+	 *
+	 * @return 모바일기기용 상세보기 URL.
 	 */
 	public String getLinkForMobile() {
 		return linkForMobile;
 	}
 
 	/**
-	 * @param linkForMobile the linkForMobile to set
+	 * 모바일기기용 상세보기 URL을 설정한다.
+	 *
+	 * @param linkForMobile 설정할 모바일기기용 상세보기 URL.
 	 */
 	public void setLinkForMobile(String linkForMobile) {
 		this.linkForMobile = linkForMobile;
 	}
 
+
 	/**
-	 * @return the keywordList
+	 * 주제어 목록을 얻는다.
+	 *
+	 * @return 주제어 목록.
 	 */
 	public List<String> getKeywordList() {
 		return keywordList;
 	}
 
 	/**
-	 * @param keywordList the keywordList to set
+	 * 주제어 목록을 설정한다.
+	 *
+	 * @param keywordList 설정할 주제어 목록.
 	 */
 	public void setKeywordList(List<String> keywordList) {
 		this.keywordList = keywordList;
 	}
 
+	/**
+	 * <p>주제어 목록에 주제어를 추가한다.</p>
+	 * <p>파라미터 keyword의 값이 빈 값이면 추가되지 않는다.</p>
+	 *
+	 * @param keyword 추가할 주제어 목록.
+	 */
 	public void addKeyword(String keyword) {
 		if ( keyword == null || "".equals(keyword.trim()) ) return;
 

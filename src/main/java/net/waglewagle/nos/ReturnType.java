@@ -1,4 +1,4 @@
-package net.waglewagle.nos.article;
+package net.waglewagle.nos;
 
 public enum ReturnType {
 	XML("xml"), JSON("json");

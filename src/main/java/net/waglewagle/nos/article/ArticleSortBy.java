@@ -1,14 +1,17 @@
 package net.waglewagle.nos.article;
 
 /**
- * 응답 그룹.
+ * <p>정렬기준 필드.</p>
  *
  * @author 강신원
  * @since 2015. 10. 15
  */
-public enum ResponseGroup {
-	SIMPLE ("simple" , "원문 라이선스 체크 하지 않음"),
-	ADVANCE("advance", "원문 라이선스 체크 후 URL 제공");
+public enum ArticleSortBy {
+	PUB_YEAR ("pubyear", "발행일"),
+	ART_TITLE("title"  , "논문명"),
+	JRL_TITLE("jtitle" , "저널명"),
+	WEIGHT   ("NULL"   , "정확도");
+
 
 	/** 값. */
 	private final String value;
@@ -16,7 +19,7 @@ public enum ResponseGroup {
 	/** 명칭. */
 	private final String title;
 
-	private ResponseGroup(String value, String title) {
+	private ArticleSortBy(String value, String title) {
 		this.value = value;
 		this.title = title;
 	}
@@ -42,8 +45,8 @@ public enum ResponseGroup {
 	}
 
 
-	public static ResponseGroup find(String name) {
-	    for (ResponseGroup e : values()) {
+	public static ArticleSortBy find(String name) {
+	    for (ArticleSortBy e : values()) {
 	        if (e.value.equals(name)) {
 	            return e;
 	        }

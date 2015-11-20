@@ -6,7 +6,7 @@ package net.waglewagle.nos.article;
  * @author 강신원
  * @since 2015. 10. 15
  */
-public enum SearchField {
+public enum ArticleSearchField {
 	BI("전체"),
 	TI("제목"),
 	AB("초록"),
@@ -20,7 +20,7 @@ public enum SearchField {
 	/** 명칭. */
 	private final String title;
 
-	private SearchField(String title) {
+	private ArticleSearchField(String title) {
 		this.title = title;
 	}
 

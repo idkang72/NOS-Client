@@ -3,6 +3,7 @@ package net.waglewagle.nos.article;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.waglewagle.nos.INdslJournal;
 import net.waglewagle.nos.NdslRecord;
 
 /**
@@ -11,7 +12,7 @@ import net.waglewagle.nos.NdslRecord;
  * @author 강신원
  * @since 2015. 10. 20
  */
-public class NdslJournal extends NdslRecord  {
+public class NdslJournal extends NdslRecord implements INdslJournal  {
 	/** 출판사명. */
 	private String publisher;
 
@@ -26,6 +27,9 @@ public class NdslJournal extends NdslRecord  {
 
 	/** 권. */
 	private String volume;
+
+	/** 권호 제어번호. */
+	private String volumeSeqNo;
 
 	/** 호. */
 	private String issue;
@@ -46,47 +50,64 @@ public class NdslJournal extends NdslRecord  {
 	private boolean hasPaper;
 
 	/**
-	 * @return the publisher
+	 * 출판사명을 얻는다.
+	 *
+	 * @return 출판사명.
 	 */
 	public String getPublisher() {
 		return publisher;
 	}
 
 	/**
-	 * @param publisher the publisher to set
+	 * 출판사명을 설정한다.
+	 *
+	 * @param publisher 설정할 출판사명.
 	 */
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
 
 	/**
-	 * @return the title
+	 * 제목을 얻는다.
+	 *
+	 * @return 제목.
 	 */
 	public String getTitle() {
 		return title;
 	}
 
 	/**
-	 * @param title the title to set
+	 * 제목을 설정한다.
+	 *
+	 * @param title 설정할 제목.
 	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
 	/**
-	 * @return the issnList
+	 * ISSN 목록을 얻는다.
+	 *
+	 * @return ISSN 목록.
 	 */
 	public List<String> getIssnList() {
 		return issnList;
 	}
 
 	/**
-	 * @param issnList the issnList to set
+	 * ISSN 목록을 설정한다.
+	 *
+	 * @param issnList 설정할 ISSN 목록.
 	 */
 	public void setIssnList(List<String> issnList) {
 		this.issnList = issnList;
 	}
 
+	/**
+	 * ISSN을 추가한다.
+	 *
+	 * @param issn 추가할 ISSN.
+	 */
 	public void addIssn(String issn) {
 		if ( issn == null || "".equals(issn.trim()) ) return;
 
@@ -97,21 +118,31 @@ public class NdslJournal extends NdslRecord  {
 		this.issnList.add(issn);
 	}
 
+
 	/**
-	 * @return the isbn
+	 * ISBN 목록을 얻는다.
+	 *
+	 * @return ISBN.
 	 */
 	public List<String> getIsbnList() {
 		return isbnList;
 	}
 
 	/**
-	 * @param isbnList the isbn to set
+	 * ISBN 목록을 설정한다.
+	 *
+	 * @param isbnList 설정할 ISBN 목록.
 	 */
 	public void setIsbnList(List<String> isbnList) {
 		this.isbnList = isbnList;
 	}
 
 
+	/**
+	 * ISBN을 추가한다.
+	 *
+	 * @param isbn 추가할 ISBN.
+	 */
 	public void addIsbn(String isbn) {
 		if ( isbn == null || "".equals(isbn.trim()) ) return;
 
@@ -122,104 +153,161 @@ public class NdslJournal extends NdslRecord  {
 		this.isbnList.add(isbn);
 	}
 
+
 	/**
-	 * @return the volume
+	 * 권호제어번호 정보를 얻는다.
+	 *
+	 * @return 권호제어번호 정보.
+	 */
+	public String getVolumeSeqNo() {
+		return volumeSeqNo;
+	}
+
+
+	/**
+	 * 권호제어번호 정보를 설정한다.
+	 *
+	 * @param volumeSeqNo 설정할 권호제어번호 정보.
+	 */
+	public void setVolumeSeqNo(String volumeSeqNo) {
+		this.volumeSeqNo = volumeSeqNo;
+	}
+
+	/**
+	 * 권 정보를 얻는다.
+	 *
+	 * @return 권 정보.
 	 */
 	public String getVolume() {
 		return volume;
 	}
 
+
 	/**
-	 * @param volume the volume to set
+	 * 권 정보를 설정한다.
+	 *
+	 * @param volume 설정할 권 정보.
 	 */
 	public void setVolume(String volume) {
 		this.volume = volume;
 	}
 
 	/**
-	 * @return the issue
+	 * 호 정보를 얻는다.
+	 *
+	 * @return 호 정보.
 	 */
 	public String getIssue() {
 		return issue;
 	}
 
 	/**
-	 * @param issue the issue to set
+	 * 호 정보를 설정한다.
+	 *
+	 * @param issue 설정할 호 정보.
 	 */
 	public void setIssue(String issue) {
 		this.issue = issue;
 	}
 
 	/**
-	 * @return the year
+	 * 발행연도를 얻는다.
+	 *
+	 * @return 발행연도.
 	 */
 	public String getYear() {
 		return year;
 	}
 
 	/**
-	 * @param year the year to set
+	 * 발행연도를 설정한다.
+	 *
+	 * @param year 설정할 발행연도.
 	 */
 	public void setYear(String year) {
 		this.year = year;
 	}
 
 	/**
-	 * @return the contentUrl
+	 * 원문보기 URL을 얻는다.
+	 *
+	 * @return 원문보기 URL.
 	 */
 	public String getContentUrl() {
 		return contentUrl;
 	}
 
 	/**
-	 * @param contentUrl the contentUrl to set
+	 * 원문보기 URL을 설정한다.
+	 *
+	 * @param contentUrl 설정할 원문보기 URL.
 	 */
 	public void setContentUrl(String contentUrl) {
 		this.contentUrl = contentUrl;
 	}
 
 	/**
-	 * @return the hasContent
+	 * 원문 유무를 얻는다.
+	 *
+	 * @return 원문 유무.
 	 */
-	public boolean isHasContent() {
+	public boolean hasContent() {
 		return hasContent;
 	}
 
 	/**
-	 * @param hasContent the hasContent to set
+	 * 원문 유무를 설정한다.
+	 *
+	 * @param hasContent 설정할 원문 유무.
 	 */
 	public void setHasContent(boolean hasContent) {
 		this.hasContent = hasContent;
 	}
 
 	/**
-	 * @return the hasAbstract
+	 * 초록 유무를 얻는다.
+	 *
+	 * @return 초록 유무.
 	 */
-	public boolean isHasAbstract() {
+	public boolean hasAbstract() {
 		return hasAbstract;
 	}
 
 	/**
-	 * @param hasAbstract the hasAbstract to set
+	 * 초록 유무를 설정한다.
+	 *
+	 * @param hasAbstract 설정할 초록 유무.
 	 */
 	public void setHasAbstract(boolean hasAbstract) {
 		this.hasAbstract = hasAbstract;
 	}
 
 	/**
-	 * @return the hasPaper
+	 * 소장 여부를 얻는다.
+	 *
+	 * @return 소장 여부.
 	 */
-	public boolean isHasPaper() {
+	public boolean hasPaper() {
 		return hasPaper;
 	}
 
 	/**
-	 * @param hasPaper the hasPaper to set
+	 * 소장 여부를 설정한다.
+	 *
+	 * @param hasPaper 설정할 소장 여부.
 	 */
 	public void setHasPaper(boolean hasPaper) {
 		this.hasPaper = hasPaper;
 	}
 
-
-
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "NdslJournal [publisher=" + publisher + ", title=" + title + ", issnList=" + issnList + ", isbnList="
+				+ isbnList + ", volume=" + volume + ", volumeSeqNo=" + volumeSeqNo + ", issue=" + issue + ", year="
+				+ year + ", contentUrl=" + contentUrl + ", hasContent=" + hasContent + ", hasAbstract=" + hasAbstract
+				+ ", hasPaper=" + hasPaper + "]";
+	}
 }
