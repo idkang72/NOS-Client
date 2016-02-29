@@ -25,6 +25,21 @@ public interface INdslJournal extends INdslRecord {
 	public String getTitle();
 
 	/**
+	 * 최근정보변경일자를 얻는다.
+	 *
+	 * @return 최근정보변경일자.
+	 */
+	public String getLastModifiedDate();
+
+	/**
+	 * 최근정보변경일자를 설정한다.
+	 *
+	 * @param lastModifiedDate 설정할 최근정보변경일자.
+	 */
+	public void setLastModifiedDate(String lastModifiedDate);
+
+
+	/**
 	 * ISSN 목록을 얻는다.
 	 *
 	 * @return ISSN 목록.

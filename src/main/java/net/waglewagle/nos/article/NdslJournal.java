@@ -19,6 +19,9 @@ public class NdslJournal extends NdslRecord implements INdslJournal  {
 	/** 저널명. */
 	private String title;
 
+	/** 최근정보변경일자. */
+	private String lastModifiedDate;
+
 	/** ISSN 목록. */
 	private List<String> issnList;
 
@@ -83,6 +86,24 @@ public class NdslJournal extends NdslRecord implements INdslJournal  {
 	 */
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	/**
+	 * 최근정보변경일자를 얻는다.
+	 *
+	 * @return 최근정보변경일자.
+	 */
+	public String getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	/**
+	 * 최근정보변경일자를 설정한다.
+	 *
+	 * @param lastModifiedDate 설정할 최근정보변경일자.
+	 */
+	public void setLastModifiedDate(String lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
 	}
 
 	/**
