@@ -15,7 +15,8 @@ public enum ArticleSearchField {
 	SN("ISSN"),
 	BN("ISBN"),
 	KW("키워드"),
-	PY("발행연도");
+	PY("발행연도"),
+	EN("등록일자");
 
 	/** 명칭. */
 	private final String title;
